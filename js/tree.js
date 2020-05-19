@@ -1,7 +1,8 @@
 let theta;
 
 function setup() {
-  createCanvas(500, 400);
+  myCanvas = createCanvas(500, 400);
+  myCanvas.parent("tree_js");
 }
 
 function draw() {

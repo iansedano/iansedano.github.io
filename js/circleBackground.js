@@ -1,6 +1,6 @@
 function setup() {
-	createCanvas(400, 400);
-
+	myCanvas = createCanvas(400, 400);
+	myCanvas.parent("color_circles");
 	background(78); // 0 means black 255 means white , if you call with three , its RGB
 
 }
@@ -32,7 +32,7 @@ function draw() { // code inside draw() is automatically looped forever
 
 	textSize(100);
 	fill(255);
-	text("Hello", 100, 200,);
+	// text("Hello", 100, 200,);
 
 }
 

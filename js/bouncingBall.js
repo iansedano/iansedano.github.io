@@ -59,7 +59,8 @@ for (var i = 1; i <= numberOfBalls; i++) {
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 function setup() {
-    createCanvas(w, h);
+    myCanvas = createCanvas(w, h);
+    myCanvas.parent("bouncing_balls")
 }
 
 function draw() {

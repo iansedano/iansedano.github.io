@@ -1,7 +1,8 @@
 var bubbles = [];
 
 function setup() {
-    createCanvas(600, 400);
+    myCanvas = createCanvas(600, 400);
+    myCanvas.parent("bubbles")
     for (var i = 0; i < 400; i++) {
         bubbles[i] = {
             x: random(0, width),
