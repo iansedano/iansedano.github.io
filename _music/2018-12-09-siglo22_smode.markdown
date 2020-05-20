@@ -5,6 +5,7 @@ date: 2018-12-09
 ---
 
 
-<div style="text-align: center;"><iframe width="560" height="315" src="https://www.youtube.com/embed/G1rwZaYIclA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class='embed-container'><iframe src='https://www.youtube.com/embed/G1rwZaYIclA' frameborder='0' allowfullscreen></iframe></div>
 
+<br>
 Pairing up with Antonio Nieto to bring out the visual potential of the music machine proejct.
