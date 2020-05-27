@@ -28,6 +28,8 @@ color: $theme-color;
 float: right;
 line-height: $nav-height;
 .page-link{
+color: $text-color;
+text-decoration: none;
 line-height: $base-line-height;
         // Gaps between nav items, but not on the first one
 &:not(:first-child) {
@@ -183,6 +185,7 @@ font-size: 42px;
 
 /** Poem formatting ********************************************/
 .poem-title {
+color: $red;
 font-size: 24px;
 letter-spacing: -1px;
 line-height: 1;
