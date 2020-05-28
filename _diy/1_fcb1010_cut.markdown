@@ -26,7 +26,7 @@ From some reading online I found that the transformer steps down to 9V and then 
 
 <img src="https://www.dropbox.com/s/hp0907t71mcfsdt/2016-10-04%2015.32.48.jpg?raw=1" class="post-img">
 
-The two yellow wires go to the diode array. You can use a center positive or a center negative 9V DC power supply. Just like a guitar pedal would. So you can just rip out the power socket, switch and transformer.
+The two yellow wires go to the diode array. You can use a center positive or a center negative 9V DC power supply. Just like a guitar pedal would. So you can just rip out the power socket, switch and transformer. I installed a small guitar pedal power jack, and wired it up (polarity doesnt matter due to diode array).
 
 Then comes the long task of hacksawing through the aluminium chassis while trying to maintain a straight line.
 

@@ -17,3 +17,12 @@ On of the defining features of the "machine" was to be an *alesis perc pad*. It 
 
 <iframe class='insta-iframe' src="//www.instagram.com/p/BlgGenznyRm/embed/" width="612" height="710" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
 
+This is the first post in a series in which I will cover:
+
+- [Everything MIDI about this project](/coding/087_Midi_bridge/).
+- Customized FCB1010
+- Customized Synth
+- DIY Rack & Cabling
+- The PercPad Bass
+- The Midi programming involved.
+- Programming the DAW to control everything
