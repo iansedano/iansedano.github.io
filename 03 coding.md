@@ -4,8 +4,7 @@ title: coding
 permalink: /coding/
 ---
 <a href="https://github.com/iansedano">github</a>  
-<a href="https://stackoverflow.com/users/10445017/ian-currie">stack overflow</a>  
-<a href="https://www.freecodecamp.org/fcc24f48fca-e18f-4ba1-9c28-241a57e7a1aa">freecodecamp</a> 
+<a href="https://stackoverflow.com/users/10445017/ian-currie">stack overflow</a> 
 
  
 <div class="flexContainer">

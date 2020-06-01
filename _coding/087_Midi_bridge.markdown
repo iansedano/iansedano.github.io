@@ -68,6 +68,7 @@ It was a mess. The main problem I had was that I ended up with too many tracks t
 <img src="https://www.dropbox.com/s/s9ssdmitzjrk8n5/Annotation%202020-05-22%20101907.jpg?raw=1" class="post-img">
 
 Everything just looked cleaner, easier to understand and control.
+
 <br>
 ### The control panel
 <br>
@@ -82,6 +83,7 @@ Along the bottom were almost always the master volume for each track. The knobs 
 <img src="https://www.dropbox.com/s/o1owicjxj0r2ipe/Key%20instrument.png?raw=1" class="post-img">
 
 This was easy, just a simple instrument selector. I had organ sounds, piano sounds, I could route to the hardware synth, and pad like sounds for atmosphere.
+
 <br>
 ### The Bass Pads
 <br>
