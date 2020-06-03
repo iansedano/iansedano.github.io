@@ -6,8 +6,8 @@ description: my musical projects
 ---
 <a href="https://www.instagram.com/iansedano/?hl=en">instagram</a><br>
 <a href="https://soundcloud.com/ianinthecave">soundcloud</a> <br>
-<a href="https://www.facebook.com/iansedanomusic/">facebook</a> <br>
-<a href="https://www.youtube.com/channel/UCgJV7OHO1uVPnG89j4ksm7Q">youtube</a><br><br>
+<a href="https://www.youtube.com/channel/UCgJV7OHO1uVPnG89j4ksm7Q">youtube</a>
+<br><br>
 
 <ul class="post-list">
 {% for post in site.music reversed %}
