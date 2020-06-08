@@ -17,6 +17,10 @@ I stuck with notepad++ for a long time. I defined custom syntax that was similar
 
 Then came Sublime Text. I had installed it once before but I uninstalled it quite quickly. Partly because it seemed far too big for what I wanted, and then I found out that the preferences were adjusted by modifying a huge `json` file and I ran. I didn't know what `json` was and I didn't understand it.
 
-I came back to it when the coding course I had signed up to recommended it. It was then I came to appreciate that it was 
+I came back to it when the Python coding course I had signed up to recommended it. It was then I came to appreciate how simple it really was. It did have more functionality than notepad++ but most of it came from plugins which were very easy to install and manage thanks to the Package Control plugin.
+
+I never gave up on notepad++ completely though, it is still my editor of choice when I have to edit single files. It opens fast and has enough syntax highlighting to get by. I uninstalled most of the plugins and have it as my 'quick and dirty' editor.
+
+When I got into Excel VBA I inevitably started using Microsoft's 
 
 
