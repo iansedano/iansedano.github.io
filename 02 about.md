@@ -16,7 +16,7 @@ and play with my dog.  <br>
 <br>
 <br>
 
-This site is a personal blog and showcase for my projects and whatever else I may be interested in
+This site is a personal blog and showcase for my projects and whatever else I may be interested in.
 
 <br>
 <br>
