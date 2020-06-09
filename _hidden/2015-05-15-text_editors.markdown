@@ -1,24 +1,28 @@
 ---
 layout: post
-title:  The search for a perfect text editor
+title:  My text editors
 date: 2020-05-15
-description: My search for a perfect text editor
+description: The text editors I use everyday
 ---
 
 # DRAFT
 
 
-### Word
-My quest with text editors began before I really got into coding. I was tired with microsoft word. I have never liked software that had loads of functionality that I never used. Especially if that functionality translated into long load times. 5 second load times are pointless if all you want to do is edit text. Besides, all the functionality gets in the way and takes up screen real-estate.
+### Word (not in the list)
+My quest with text editors began before I really got into coding. I was tired with Microsoft word. I have never liked software that had loads of functionality that I never use. Especially if that functionality translates into long load times. Anything  over 3 seconds gets on my nerves. Especially if all you want to do is edit plain text. Besides, when functionality occupies screen real-estate, it becomes distracting.
 
 ### Evernote
-While I was writing and taking notes, I had many documents that were very short. Opening them up in word was too slow. So I tried services like Evernote. I did enjoy using them, and they helped me manage many small notes well, yet I was still frustrated by its speed. I sometimes wanted to edit a single note, without having to open the whole interface and see all of my other notes from all time.
+I have always written a lot and taken many notes, and so I found I had many documents that were very short. So I tried Evernote to get me out of load-time hell. I did enjoy using it, and it helped me manage many small notes, yet I was still frustrated by its speed. Sometimes I wanted to edit a single note, without having to open the whole interface and see all of my other notes.
 
 ### Notepad
-I started using notepad. Which was great. Simple, fast, easy. My notes were light and I could just use a folder structure to organize things. Yet I did miss some functionality. I also wanted to customise the look of notepad and so I moved to notepad++.
+My first breakthrough was when I started using notepad and plain text. It was great. Simple, fast, easy, light. What you see is what you get. I could use explorer folder structure to organize them. Yet I did miss some functionality.
 
 ### Notepad++
-I stuck with notepad++ for a long time. I defined custom syntax that was similar to markdown, though I had never heard of markdown. To do things like enable folding, make text **bold** and other things like that. I used the project functionality and experimented with plugins. That said I was never really happy with the way projects worked (I still haven't found one that I don't have any problems with).
+I stuck with notepad++ for a long time. It is super fast. Even faster than Notepad at times. It had a load of functionality but that didn't prove distracting and didn't slow it down. I could customize the look if it. I could use tabs if I wanted.
+
+I defined custom syntax that was similar to markdown, though I had never heard of markdown. I enabled custom folding markers, made text **bold** and *italicised* to aid navigation.
+
+I explored project functionality, which helped me keep collections together. When I wrote in a journal I could see all the files associated with them in the sidebar. I could jump quickly from file to file. That said I was never really happy with the way projects worked. Something that I have always wanted is for project files to be defined with *relative* paths. I organize my notes, if they aren't organized and accessible, they become useless as notes. This means that sometimes folder structure changes. 
 
 ### Sublime Text
 Then came Sublime Text. I had installed it once before but I uninstalled it quite quickly. Partly because it seemed far too big for what I wanted, and then I found out that the preferences were adjusted by modifying a huge `json` file and I ran. I didn't know what `json` was and I didn't understand it.

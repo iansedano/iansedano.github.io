@@ -12,7 +12,7 @@ description: my musical projects
 <ul class="post-list">
 {% for post in site.music reversed %}
     <li>
-        <h2><a class="poem-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+        <a class="post-list-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         <p class="post-meta">{{ post.date | date: '%B %-d, %Y' }}</p>
       </li>
 {% endfor %}

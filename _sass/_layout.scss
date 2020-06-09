@@ -142,9 +142,13 @@ text-align: center;
  * Posts  **********************************************************
  */
 
+$h_margin_top: 0.7em;
+$h_margin_bottom: 0.7em;
+
 .post-header {
 margin-bottom: $vertical-spacing-unit;
 }
+
 .post-title {
 font-size: 42px;
 letter-spacing: -1px;
@@ -153,48 +157,53 @@ line-height: 1;
 font-size: 36px;
     }
 }
+
 .post-content {
 
+    h1 {
+    font-size: 4em;
+    text-align: center;
+    line-height: normal;
+    margin-top: $h_margin_top;
+    margin-bottom: $h_margin_bottom;
+    @include media-query($on-laptop) {
+    font-size: 32px;
+            }
+        }  
 
-h1 {
-font-size: 5em;
-text-align: center;
-line-height: normal;
-margin-bottom: 1em;
-@include media-query($on-laptop) {
-font-size: 32px;
+    h2 {
+    font-size: 3em;
+    text-align: center;
+    line-height: normal;
+    margin-top: $h_margin_top;
+    margin-bottom: $h_margin_bottom;
+    @include media-query($on-laptop) {
+    font-size: 24px;
+            }
         }
-    }  
 
-h2 {
-font-size: 4em;
-text-align: center;
-line-height: normal;
-margin-bottom: 1em;
-@include media-query($on-laptop) {
-font-size: 24px;
+    h3 {
+    font-size: 2em;
+    text-align: center;
+    line-height: normal;
+    margin-top: $h_margin_top;
+    margin-bottom: $h_margin_bottom;
+    @include media-query($on-laptop) {
+    font-size: 22px;
+            }
         }
-    }
 
-h3 {
-font-size: 3em;
-text-align: center;
-line-height: normal;
-margin-bottom: 1em;
-@include media-query($on-laptop) {
-font-size: 22px;
+    h4 {
+    font-size: 1em;
+    text-align: center;
+    line-height: normal;
+    margin-top: $h_margin_top;
+    margin-bottom: $h_margin_bottom;
+    @include media-query($on-laptop) {
+    font-size: 18px;
+            }
         }
-    }
 
-h4 {
-font-size: 2em;
-text-align: center;
-line-height: normal;
-margin-bottom: 20px;
-@include media-query($on-laptop) {
-font-size: 18px;
-        }
-    }
 }
 
 .post-img {
@@ -215,9 +224,9 @@ font-size: 42px;
 
 
 
-/** Poem formatting ********************************************/
+/** Post list formatting ********************************************/
 
-.poem-title {
+.post-list-title {
 color: $red;
 font-size: 24px;
 letter-spacing: -1px;
@@ -227,68 +236,6 @@ font-size: 16px;
     }
 }
 
-
-/** 
- * Portfolio grid **********************************************************
-*/
-// Nicolas Gallagher's micro clearfix hack
-// http://nicolasgallagher.com/micro-clearfix-hack/
-
-.clearfix:before,
-.clearfix:after {
-content: " ";
-display: table;
-}
-.clearfix:after {
-clear: both;
-}
-
-.project {
-width: 33.33%;
-height: 250px;
-float: left;
-vertical-align: middle;
-box-sizing: border-box;
-padding: 10px;
-}
-
-.thumbnail{
-width: 230px;
-height: 230px;
-overflow: hidden;
-}
-
-.thumbnail img{
-width: 230px;
-height: auto;
-position: relative;
-//left: -25%;
-//top: -5%;
-}
-
-.thumbnail a{
-float: left;
-position: relative;
-width: 100%;
-height: 230px;
-}
-
-.thumbnail a span {
-display: none;
-position: absolute;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-background: rgba(0,0,0,0.4);
-color: $grey-color-light;
-padding: 40px;
-text-align: center;
-}
-
-.thumbnail a:hover span {
-display: block;
-}
 
 /** 
  * Portfolio pages **********************************************************
@@ -340,7 +287,7 @@ font-size: $caption_font_size;
 }
 
 
-/*++++++++++++++++++++++++++++++++*/
+/*+++++++++++++ GRID +++++++++++++++++++*/
 
 .box{
   height:230px;

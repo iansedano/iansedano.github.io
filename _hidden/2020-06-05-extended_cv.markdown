@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  Fresh windows
-date: 2015-05-15
-description: How I set up my windows machines
+title:  Extended CV
+date: 2020-06-05
+description: An extended version of my CV
 ---
 
-# CV Ian Currie Sedano
+# Ian Currie Sedano
 
-Renaissance developer  
-17 years of professional experience  
+### Renaissance developer  
+
 
 ## Introduction
 
@@ -21,8 +21,6 @@ It has also given me an great attitude to problems, perfectly suited towards rol
 I am happiest when coming up with new solutions, learning new technologies, experimenting with new tools, and coding. I am interested in the whole stack, from hardware to front-end and the full development cycle, from design to maintenance and support.
 
 
-
-
 ## Professional goals
 
 I would like to work for a company where diversity is valued, and yet where there is a large overlap in values and objectives. Where mistakes are made and learnt from. Where I can be held accountable, but also be given freedom to think and work. Where results are valued more than office time. Where work is smart, and *sometimes* hard.
@@ -33,7 +31,8 @@ I want to form part of a team of experienced professionals and to learn as much 
  
 ## SOFT SKILLS
 
-* Clarify a mission and goals and 
+* Able to easily clarify goals and missions, getting everyone on the same page.
+* 
 
 
 
