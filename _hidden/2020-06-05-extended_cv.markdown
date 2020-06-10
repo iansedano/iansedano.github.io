@@ -12,55 +12,117 @@ description: An extended version of my CV
 
 ## Introduction
 
-I am a experienced professional with a passion for software development and clean, re-usable systems and code.
+I am a experienced well-rounded professional who is technically oriented. I have had varied experiences throughout my life and have been exposed to many different people and cultures.
 
-I have had a varied background. I was brought up between two very different cultures, and have worked in locations diverse as art-galleries, shops, offices, factories, warehouses, remotely, in the field, on a mountain I have worked for artists, businessmen, managers, engineers, scientists, farmers and have been my own boss. This has given me a very balanced outlook. I understand and can empathize with varied situations and perspectives. I can work with all kinds of personalities and I can mediate and manage conflict extremely well.
+Every road leads me to IT. Its my ease with software, hardware and my enthusiasm that has led me to start searching for a position in the industry.
 
-It has also given me an great attitude to problems, perfectly suited towards roles in the IT industry. I have seen too many mistakes made from simple misunderstandings and impatience. I always strive to fully comprehend whatever I am working with, whether that is by reading documentation, testing or being taught. I enjoy being organized and catching small problems early. I love thinking about design philosophy, systems and architecture, such as agile.
+I am someone who is very good at clarifying a realistic goal, able to break down complex problems and to consider edge-cases that deserve consideration. I am highly organized, enjoying catching small problems before they become large.  My judgement has come to be trusted as careful and measured.
 
-I am happiest when coming up with new solutions, learning new technologies, experimenting with new tools, and coding. I am interested in the whole stack, from hardware to front-end and the full development cycle, from design to maintenance and support.
+Nothing gives me more of a feeling of purpose than learning about new concepts, ideas, technologies and tools. I have initiative, having implemented IT solutions with all my employers, teaching them tricks, creating websites for them and automating processes they thought were not possible. I am not afraid to get stuck in. Whether that takes the form of rolling up my sleeves and cleaning up a spill, or diving into a highly technical manual. If it needs to be done to get where we want to be, I am willing to do it.
+
+Finally, I am good with people, as someone who is humble, trustworthy, patient - someone who **listens**. My leadership style is based on mutual understanding and co-operation. I believe that if everyone fully understands what the goals are, progress arises naturally.
 
 
 ## Professional goals
 
-I would like to work for a company where diversity is valued, and yet where there is a large overlap in values and objectives. Where mistakes are made and learnt from. Where I can be held accountable, but also be given freedom to think and work. Where results are valued more than office time. Where work is smart, and *sometimes* hard.
+I would like to work for a company where diversity is valued, and yet where there is a large overlap in values and objectives. Where mistakes are made and learnt from. Where I can be held accountable, but also be given freedom to think and work.
 
-I want to form part of a team of experienced professionals and to learn as much as possible about the tech stack they are working with. I want to contribute in any way that I can to this process.
-
+I would like to work within the IT industry developing a product. I would like to be able to learn about all aspects of the development cycle, the full-stack, the hardware, the design philosophy, the maintenance, the support. While there is more to learn, I am motivated to do it
 
  
-## SOFT SKILLS
+## Soft Skills
 
-* Able to easily clarify goals and missions, getting everyone on the same page.
-* 
-
-
-
-## SIGNIFICANT EXPERIENCES
-
-*	Formar parte del equipo que implementó la pasarela de pago online del BBVA Definir, diseñar, desarrollar y lanzar un ERP y un WMS completos, desde cero, en sólo siete años.
-*	Trabajar como evangelista técnico en una prometedora startup australiana y dejarla cuando estaba a punto de empezar a cotizar en el NASDAQ, triplicando las ventas en los territorios a mi cargo para contribuir al éxito colectivo.
-*	Lanzar una campaña de captación de talento técnico y conseguir atraer a cientos de personas a Madrid para las pruebas de selección y cobertura en TV.
-*	Fundar una startup y cerrar una ronda de 330.000€ de inversión de capital-riesgo.
-*	Concebir, desarrollar y lanzar dos productos web que llegaron a transaccionar €1M anuales en ventas afiliadas. Vender ambos y gestionar todo el proceso legal previo y posterior.
-*	Enviar una newsletter sobre tecnología, todos los domingos desde hace más de seis años, que más de 9.000 personas quieren recibir.
-*	Organizar un evento anual sobre tecnología que vende todas sus entradas en unos pocos segundos.
-*	Ser CEO de una compañía fundada por otros. Dos veces.
-*	Gestionar la implementación y cumplimiento de la LOPD y el RGPD.
-*	Completar todos los trámites legales, operativos y fiscales necesarios para abrir la filial de una compañía multinacional en Bilbao.
-
-## SIGNIFICANT RELATIONSHIPS
-
-*	Iñaki Arrola, fundador y General Partner del fondo de capital-riesgo K Fund, que me aporta información sobre el ecosistema startup desde el punto de vista del inversor.
-*	Diego Mariño, fundador de Ducksboard y Principal Product Manager en New Relic con el que siempre valido ideas y estrategias de Product Management.
-*	Alberto Molpeceres, fundador de BESEPA, con el que consulto habitualmente su opinión sobre decisiones importantes a nivel de ejecución y gestión de operaciones. 
-
-## WORK EXPERIENCE
-
-### 1
+* Able to clarify goals and missions, getting everyone on the same page and pulling in the same direction.
+* Able to mediate and understand people, able to lead and able to serve.
+* Able to think laterally and creatively, also not afraid to start-again if there is a better way.
+* Able to finish projects and not let "feature-creep" take over.
 
 
-### 2
+
+## Significant Experiences
+
+* Developing a way of working with IT from the ground up.
+	* A slow start persuading colleagues (many of whom were technologically adverse) by **evangelizing** the benefits and talking one-on-one to understand the resistance.
+	* I demonstrated software such as **Dropbox**, **Google Sheets**, **Google Docs**, **SQL**. I demonstrated what was possible with simple scripts in **VBA** or **Python**.
+	* I **piloted** solutions (out of my own pocket) from adopting Dropbox, to paying developers to consult with and explore options such as **Ruby on Rails**, **Access**, **Django**.
+	* **Incremented** progress slowly by **introducing** behaviours and technologies that lead to the final solution.
+	* Eventually implementing a **server**, **database** and touch-screen and bar-code **interface** in the factory which has been in use now for 5 years.
+
+* Become the expert in complicated **logistics** projects.
+	* On own **initiative** looked into the **technicalities** of **customs** and shipping **procedures**, from vehicle **specifications** to **legal** requirements.
+	* Was **organized** enough to manage and present all the **data** required, update all involved parties, and keep things moving. **Excel**, **ERP**, **CAD**
+
+* Discovering **VBA** through **Excel**.
+	* I initially started using **Excel** to manage all my data and loved it.
+	* I had taken some programming classes but when I started to program things that were really useful to my everyday work in **VBA**, something clicked in me and have since been able to pick up **programming languages** with ease.
+
+* Becoming the IT expert wherever I end up.
+	* I was tasked with **web development** and **deploying** websites. **wordpress**, **plesk**, basic **HTML**, **CSS**, **Javascript**, **DNS**, **domains**.
+	* IT **support** and **troubleshooting**.
+	* **Building** desktops, **repairing** and **upgrading** laptops.
+	* **Installing** software and setting up **configuration** (on site and with **teamviewer**, **ammy**)
+	* **Teaching** and **coaching** all levels of competence.
+ 
+
+## Significant Relationships
+
+* Juan Pi Andreu - lynchpin between Halcyon Art International
+* David Sureda? - customs expert who I consult regulations with
+* Ryan Desmond - founder of Coding Nomads
+* Andreu Tortajada - IT Project Manager of Barcelona Council
+* Pablo Moles - Senior Developer at Oracle
+
+
+## Work Experience
+
+### Junior Software Developer
+#### Wintergatan community / May 2020 - Current
+Voluntary Position - Creating a virtual marble machine for people to compose music with.
+
+So far contributed to starting project, design meetings and schema writing in **Typescript**. It was challenging due to the amount of people involved and the diverging viewpoints. I tried to steer the project towards a **modular** and **incremental** approach. I provided the first **UI mock-ups** and examples which clarified the **use cases** and requirements of the software. Development is in progress.
+
+Working with **Github**, **Typescript**, **Prettier**, **React**, **Node**, and possibly **Docker**.
+
+### Logistics Engineer
+#### Haclyon Art International / 2016 - Present
+Moving massive sculptures.
+
+Logistics special project management, import/export, customs, high value goods international teams, mediation, breaking down complex procedures, deadlines. Oversee regular supply chain.
+
+Accounting assistance, critical data, implementing methodologies, scripts, checking consistency, merging data, translation and mediation.
+
+Created object model within VBA. Create tools for colleagues within Excel. Debugging, Git, Continous Delivery, own initiative.
+
+Web development, Plesk, Wordpress, Jekyll, HTML, CSS
+
+### Data Engineer
+#### Fundición Artística Vilà / 2012 - 2016
+Bringing a foundry into the digital age.
+
+Proposed, led research, selection, and implementation of a time tracking solution in a factory setting. Modeled data and processes, observed behaviours, mediated, delivered.
+
+Designed database structure for parent company, used to implement their ERP system.
+
+Logistics special project management - as above.
+
+Accounting assistance - as above.
+
+Web development - as above.
+
+### Teacher
+#### Freelance Language Teacher and IT support / 2009 – 2012
+
+Working as a teacher I have found to be an inspiring line of work, which led me to begin a degree in psychology as I was very interested in the diversity of people and how learning and change happens.
+I worked mostly one-to-one, with a whole range of ages including some special-needs students.
+I got a reputation for being patient, able to deal with the difficult students and classes, with a high level of integration between English and Spanish.
+
+### Research Assistant
+#### Grupo Acción Communitaria / 2009 – 2010
+
+A year long placement in which I carried out a solo investigation into Social Network Analysis from scratch.
+
+The group were interested in this new form of analysis and I was brought in to research the tools available, their possible applications, and run a pilot analysis on the group itself.
+At the end of the year I presented the project at the annual conference.
 
 ####References
 
@@ -68,6 +130,7 @@ I want to form part of a team of experienced professionals and to learn as much 
 
 ## LANGUAGES
 
+English - Native
 
 
 ## MISCELANIA
