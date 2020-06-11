@@ -11,7 +11,7 @@ position:fixed;
 left:0px;
 top:0px;
 height:56px;
-width:100%;
+width:100vw;
 z-index: 50;
 }
 
@@ -29,26 +29,31 @@ color: $theme-color;
 .site-nav {
 float: right;
 line-height: $nav-height;
-.page-link{
-color: $text-color;
-text-decoration: none;
-line-height: $base-line-height;
-// Gaps between nav items, but not on the first one
-&:not(:first-child) {
-margin-left: 10px;
+
+    .page-link{
+    color: $text-color;
+    text-decoration: none;
+    line-height: $base-line-height;
+
+        // Gaps between nav items, but not on the first one
+        &:not(:first-child) {
+        margin-left: 10px;
         }
     }
-@include media-query($on-palm) {
-position: fixed;
-top: 0px;
-right: 10px;
-text-align: right;
-&:hover .trigger {
-display: block;
-padding-bottom: 5px;
+
+    @include media-query($on-palm) {
+    //position: fixed;
+    top: 0px;
+    right: 10px;
+    text-align: right;
+
+        &:hover .trigger {
+        display: block;
+        padding-bottom: 5px;
         }
-.page-link {
-display: line;
+
+        .page-link {
+        display: line;
         }
     }
 }
@@ -118,6 +123,7 @@ color: $theme-color;
 
 .page-content {
 padding: 100px 0; /* VERTICAL PADDING FOR TITLE ON EVERY PAGE */
+width: 100%;
 }
 .page-heading {
 font-size: 20px;
@@ -159,46 +165,40 @@ font-size: 36px;
 }
 
 .post-content {
-
+    
+    h1, h2, h3, h4, h5 {
+        line-height: normal;
+        margin-top: $h_margin_top;
+        margin-bottom: $h_margin_bottom;
+    }
+    
     h1 {
-    font-size: 4em;
+    font-size: 3em;
     text-align: center;
-    line-height: normal;
-    margin-top: $h_margin_top;
-    margin-bottom: $h_margin_bottom;
     @include media-query($on-laptop) {
     font-size: 32px;
             }
         }  
 
     h2 {
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
-    line-height: normal;
-    margin-top: $h_margin_top;
-    margin-bottom: $h_margin_bottom;
     @include media-query($on-laptop) {
     font-size: 24px;
             }
         }
 
     h3 {
-    font-size: 2em;
-    text-align: center;
-    line-height: normal;
-    margin-top: $h_margin_top;
-    margin-bottom: $h_margin_bottom;
+    font-size: 1.5em;
+    text-align: left;
     @include media-query($on-laptop) {
     font-size: 22px;
             }
         }
 
     h4 {
-    font-size: 1em;
-    text-align: center;
-    line-height: normal;
-    margin-top: $h_margin_top;
-    margin-bottom: $h_margin_bottom;
+    font-size: 1.3em;
+    text-align: left;
     @include media-query($on-laptop) {
     font-size: 18px;
             }
@@ -240,6 +240,12 @@ font-size: 16px;
 /** 
  * Portfolio pages **********************************************************
 */
+
+/* portfolio tinkering */
+$img_spacing: 5px; 
+$img_height: 275px;
+$caption_font_size: 12px;
+$caption_color: #A72608;
 
 .blankbox{
 background: $theme-color;

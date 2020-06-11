@@ -14,20 +14,22 @@ description: An extended version of my CV
 
 I am a experienced well-rounded professional who is technically oriented. I have had varied experiences throughout my life and have been exposed to many different people and cultures.
 
-Every road leads me to IT. Its my ease with software, hardware and my enthusiasm that has led me to start searching for a position in the industry.
+I have gathered many skills, from artistic to technical, but every road of my interest eventually leads me to IT. That has led me to search for a position in the industry.
 
-I am someone who is very good at clarifying a realistic goal, able to break down complex problems and to consider edge-cases that deserve consideration. I am highly organized, enjoying catching small problems before they become large.  My judgement has come to be trusted as careful and measured.
+I am someone who is very good at clarifying a realistic goal, able to break down complex problems and to consider edge-cases that deserve consideration. I am highly organized, enjoying catching small problems before they become large.  My judgement has come to be trusted as technical, careful and measured.
 
-Nothing gives me more of a feeling of purpose than learning about new concepts, ideas, technologies and tools. I have initiative, having implemented IT solutions with all my employers, teaching them tricks, creating websites for them and automating processes they thought were not possible. I am not afraid to get stuck in. Whether that takes the form of rolling up my sleeves and cleaning up a spill, or diving into a highly technical manual. If it needs to be done to get where we want to be, I am willing to do it.
+Nothing gives me more of a feeling of purpose than learning about new concepts, ideas, technologies and tools. I have initiative, having implemented IT solutions with all my employers, teaching them tricks, creating websites for them and automating processes they thought were impossible. I am not afraid to get stuck in. Whether that takes the form of rolling up my sleeves and cleaning up a spill, or diving into a highly technical manual. If it needs to be done to get where we want to be, I am willing to do it.
 
 Finally, I am good with people, as someone who is humble, trustworthy, patient - someone who **listens**. My leadership style is based on mutual understanding and co-operation. I believe that if everyone fully understands what the goals are, progress arises naturally.
 
 
 ## Professional goals
 
-I would like to work for a company where diversity is valued, and yet where there is a large overlap in values and objectives. Where mistakes are made and learnt from. Where I can be held accountable, but also be given freedom to think and work.
+I would like to be able to work with many aspects of the development cycle, the full-stack, the design philosophy, its maintenance and the business of it.
 
-I would like to work within the IT industry developing a product. I would like to be able to learn about all aspects of the development cycle, the full-stack, the hardware, the design philosophy, the maintenance, the support. While there is more to learn, I am motivated to do it
+I want to get stuck into a junior position as soon as possible to solidify my skills and start contributing to software.
+
+I would like to work for a company where diversity is valued, and yet where there is a large overlap in values and objectives. Where mistakes are made and learnt from. Where I can be held accountable, but also be given freedom to think and work.
 
  
 ## Soft Skills
@@ -36,7 +38,7 @@ I would like to work within the IT industry developing a product. I would like t
 * Able to mediate and understand people, able to lead and able to serve.
 * Able to think laterally and creatively, also not afraid to start-again if there is a better way.
 * Able to finish projects and not let "feature-creep" take over.
-
+* Renaissance man, well-rounded.
 
 
 ## Significant Experiences
@@ -66,10 +68,9 @@ I would like to work within the IT industry developing a product. I would like t
 
 ## Significant Relationships
 
-* Juan Pi Andreu - lynchpin between Halcyon Art International
-* David Sureda? - customs expert who I consult regulations with
+* Juan Pi Andreu - My long-time manager, a wealth of experience, patience and good decisions
 * Ryan Desmond - founder of Coding Nomads
-* Andreu Tortajada - IT Project Manager of Barcelona Council
+* Andreu Tortajada - IT Project Manager at Barcelona Council
 * Pablo Moles - Senior Developer at Oracle
 
 
@@ -124,14 +125,17 @@ A year long placement in which I carried out a solo investigation into Social Ne
 The group were interested in this new form of analysis and I was brought in to research the tools available, their possible applications, and run a pilot analysis on the group itself.
 At the end of the year I presented the project at the annual conference.
 
-####References
+
 
 
 
 ## LANGUAGES
 
-English - Native
-
+English - Native (mother tongue)
+Spanish - Native
+Catalan - Conversational
+French - Basic
+Portuguese - Basic
 
 ## MISCELANIA
 
@@ -139,6 +143,8 @@ English - Native
 ## Q & A
 
 ###¿Cuáles son tus principales herramientas de trabajo (IDEs, editores de texto, clientes de correo, Excel...) y cómo las utilizas (plugins, configuraciones, trucos)?
+
+My preferred development environment is a combination of Sublime Text 3, and Visual Studio Code. I use Windows Subsystem for Linux extensively
 
 
 ###¿Qué recursos online (webs, blogs, apps, foros, etc) usas para ayudarte a desempeñar tu trabajo?

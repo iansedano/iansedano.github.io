@@ -1,6 +1,7 @@
 /**
  * Reset some basic elements
  */
+
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -10,17 +11,12 @@ dl, dd, ol, ul, figure {
 
 
 /** Variables **********************************************/
-$base-font-family:              'Fira Code', monospace;
+$base-font-family:              georgia, serif;
 $base-line-height:              1.5em;
 $horizontal-spacing-unit:       50px;
 $vertical-spacing-unit:         40px;
 $nav-height:                    56px;
 
-/* portfolio tinkering */
-$img_spacing: 5px; 
-$img_height: 275px;
-$caption_font_size: 12px;
-$caption_color: #A72608;
 
 /* COLORS  */
 $red:  #A72608;
