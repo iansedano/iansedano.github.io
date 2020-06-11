@@ -1,13 +1,12 @@
 ---
 layout: post
-title:  Installing WSL on windows
-date: 2015-04-10
+title:  Setting up WSL on Windows 10
+date: 2020-04-10
 description: My process of installing WSL on windows
 ---
 
-# Setting up WSL with Windows 10
 
-This is a quick guide in getting set up with WSL (windows subsystem for Linux). There are many tutorials out there but in my case it was slightly different so putting this out there for anyone who might need it.
+This is a quick guide in getting set up with WSL (Windows Subsystem for Linux). There are many tutorials out there but in my case it was slightly different. So I putting this out there for anyone who might have use of it.
 
 Why would you want WSL?
 * To use Linux tools without having to have a virtual machine or dual boot. I commonly use these on WSL and not windows:
@@ -15,6 +14,7 @@ Why would you want WSL?
 	* Git (because SSH)
 	* Pyspread (with GUI!)
 	* Grep
+	* This is a growing list.
 
 
 ## Fresh Install
@@ -23,9 +23,13 @@ Why would you want WSL?
 
 While you can install WSL on previous builds, WSL2 is really what you want to go for. I found so many weird bugs in WSL1 while WSL2, just works.
 
+**this will probably not be needed in a few months, when WSL2 will be packaged with Windows as standard**
+
 Check your version of windows by pressing <kbd>Win</kbd> + <kbd>R</kbd> then type `winver` in the box.
 
-You need the latest version of Windows (2004 build or later - this refers to the build not the year!) to be able to use WSL2, and for that you need to be on the **windows insider program**, found in:
+<img src="https://www.dropbox.com/s/a3oicv3ivpkif61/winver.png?raw=1" class="post-img">
+
+You need at least this version of Windows to be able to use WSL2, and for that, when I installed this (2020-04-10) you needed to be on the **windows insider program**, found in:
 
 `settings > update & security`
 
@@ -37,6 +41,8 @@ I was previously on a 18XX build and WSL2, though it would install without issue
 
 
 ### Enable WSL
+
+**this will probably not be needed in a few months, when WSL2 will be packaged with Windows as standard**
 
 Hit the Start button in the taskbar and type "Turn Windows features on or off" - this is also accessible via the Control Panel. 
 
@@ -82,7 +88,7 @@ The above `source ~/.bashrc` command should be added to the profile so that it r
 
 ## If you installed it but its not working properly
 
-I already installed WSL2 but started getting these errors when installing different packages:
+I had already installed WSL2 but started getting these errors when installing different packages:
 
 `The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 8C718D3B5072E1F5`
 
@@ -92,28 +98,36 @@ I already installed WSL2 but started getting these errors when installing differ
 
 ---
 <br>
-I got these errors even though I had installed the WSL2 update, but though the installer ran without any problems, it had not in fact *activated*.
+Even though I had installed the WSL2 update, it had not in fact *activated*, this was because my Windows build was too old. See instructions above for how to get a newer build of windows.
 
-This was because I was running in an older build of Windows that didn't support WSL2. See instructions above for how to get a newer build of windows.
-
-**You can check your version by running this command in ubuntu**:
+**You can check your WSL version by running this command in ubuntu**:
 
 `[ $(grep -oE 'gcc version ([0-9]+)' /proc/version | awk '{print $3}') -gt 5 ] && \ echo "WSL2" || echo "WSL1"`
 
 (This command only seems to work in WSL 1.)
 
-Find the WSL2 installer package with Google and install it.
+Alternatively this command: `wsl -l -v` will not be recognized in WSL1.
 
-after which `wsl -l -v` should work in Powershell and show that you have version 2 of WSL.
+Upgrade windows, then find the WSL2 installer package with Google and install it.
 
-to convert your existing distro to WSL 2:
+after which `wsl -l -v` should work in Powershell and show that you have version 1 of WSL, or no distro installed.
+
+```
+PS> wsl -l -v
+  NAME      STATE           VERSION
+* Ubuntu    Running         2
+PS>
+```
+
+Ensure you have Ubuntu installed via the Windows Store and then to convert your existing distro to WSL 2:
+
 `wsl --set-version <disto-name> 2`
 
-**side note**
+#### possible issue with paths
 
-I ran into an issue here with my paths. Bash would throw an error complaining about my path.
+When I got Ubuntu up and running it would throw an error complaining about my path.
 
-This was because Linux doesn't accept spaces in its paths, but Windows does, and WSL inherits its path from windows.
+This is because Linux doesn't accept spaces in its paths, but Windows does, and WSL inherits its paths from Windows.
 
 To fix this I went into `regedit`, navigated to:
 
@@ -123,3 +137,6 @@ and put quotations around any paths with spaces.
 
 I would recommend getting familiar with your .bashrc and .bash_profile files (always edit these from within WSL!) as many of the issues I have encountered seem to stem from this getting messed up or not being configured properly.
 
+---
+
+Good luck! If you get through it I am sure you will enjoy WSL! For me it is far more practical than other Linux solutions for Windows users, being far more practical than VMs, dual-booting, Cygwin or Git Bash (ymmv).

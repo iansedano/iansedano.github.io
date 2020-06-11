@@ -204,6 +204,14 @@ font-size: 36px;
             }
         }
 
+    h5 {
+        font-size: 1.1em;
+        text-align: left;
+        @include media-query($on-laptop) {
+        font-size: 15px;
+                }
+            }
+
 }
 
 .post-img {
