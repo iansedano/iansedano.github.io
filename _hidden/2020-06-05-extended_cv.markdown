@@ -95,18 +95,18 @@ Voluntary Position done in my **spare time** - Creating a **open-source** virtua
 
 ##### <span>&#8226;</span> Accounting data crunching
 * Reviewed and validated critical accounting data. **Excel**, **Google Sheets** **Dropbox**.
-* Implemented methodologies among contributors. **Collaboration**, **Being Explicit**, **Writing everything down**.
-* Wrote scripts in **VBA**, **Python** and **Pandas** to manage data from multiple sources.
+* Implemented methodologies among contributors **Collaboration**, **being explicit**, **writing everything down**, **quality control** on data inserted.
+* Wrote scripts in **VBA**, **Python** and **Pandas** to manage data from multiple sources, and to check consistency.
 * Translated and mediated communications.
 
 ##### <span>&#8226;</span> VBA Development
 * On own initiative learned and developed **VBA** tools.
 * Created an **object model** within VBA to model Sculptures using Scripting Dictionaries.
-* Created data entry, search, reporting and validation tools.
+* Created **data entry**, **search**, **reporting** and **validation** tools.
 * Used **Git-xl** and **Git** to manage repository.
 
 ##### <span>&#8226;</span> Web Development
-* Created websites with **Wordpress**, **Jekyll** **Github** and **Plesk**
+* Created websites with **Wordpress**, **Jekyll**, **Github** and **Plesk**
 * Carried out iterative development process by developing limited features and getting feedback often.
 * Used combination of Wordpress editors, **HTML**, **CSS**, **SASS**, **Javascript**, **Markdown**, **YML**, **Dropbox** for image hosting, **Linux** for **command-line** tools, **FTP**, **DNS**.
 
@@ -121,7 +121,7 @@ Voluntary Position done in my **spare time** - Creating a **open-source** virtua
 
 ##### <span>&#8226;</span> Database design
 * Designed database structure for parent company, used to implement their ERP system.
-* Followed standard Database design procedures **SQL** **Excel** **Access** **DIA** (diagramming software)
+* Followed standard Database design procedures **SQL**, **Excel**, **Access**, **DIA** (diagramming software)
 
 ##### <span>&#8226;</span> Logistics, Accounting and Web development
 * As described above
@@ -145,26 +145,23 @@ Voluntary Position done in my **spare time** - Creating a **open-source** virtua
 
 ##### <span>&#8226;</span> Social Network Analysis
 * Solo investigation into Social Network Analysis.
-* Carried out analysis of the group itself. **Agna** **Excel**
+* Carried out analysis of the group itself. **Agna**, **Excel**
 * Presented project at end of year conference.
 
 ---
 ## Education
 
-Certificate in **Python Software Development** - CodingNomads
-BSc in **Psychology**
-A-levels in **Maths**, **Physics** and **Spanish**
+* Certificate in **Python Software Development** - CodingNomads  
+* BSc in **Psychology**  
+* A-levels in **Maths**, **Physics** and **Spanish**  
 
 ## Languages
 
-**English** - Native (mother tongue)
-**Spanish** - Native
-**Catalan** - Conversational
-**French** - Basic
-**Portuguese** - Basic
-
-
-## Miscelania
+**English** - Native (mother tongue)  
+**Spanish** - Native  
+**Catalan** - Conversational  
+**French** - Basic  
+**Portuguese** - Basic  
 
 
 
