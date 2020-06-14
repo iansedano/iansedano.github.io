@@ -1,8 +1,0 @@
----
-layout: post
-title:  VBA Sculptures
-date: 2015-05-15
-description: this is what included images could look like
----
-
-
