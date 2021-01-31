@@ -3,6 +3,7 @@ layout: post
 title:  Flyers and Websites
 date: 2019-06-10
 description: A few flyer and website designs.
+tags: design art
 ---
 
 <img src="https://www.dropbox.com/s/eez4fw1z6eno1pf/alemany.jpg?raw=1" class="post-img">

@@ -2,9 +2,11 @@
 layout: post
 title:  Setting up WSL on Windows 10
 date: 2020-04-10
-description: My process of installing WSL on windows
+description: Installing WSL on windows
+tags: linux windows tutorial programming
 ---
 
+_(These instructions are now most likely out of date)_
 
 This is a quick guide in getting set up with WSL (Windows Subsystem for Linux). There are many tutorials out there but in my case it was slightly different. So I putting this out there for anyone who might have use of it.
 
@@ -23,7 +25,7 @@ Why would you want WSL?
 
 While you can install WSL on previous builds, WSL2 is really what you want to go for. I found so many weird bugs in WSL1 while WSL2, just works.
 
-**this will probably not be needed in a few months, when WSL2 will be packaged with Windows as standard**
+**This will probably not be needed in a few months, when WSL2 will be packaged with Windows as standard.**
 
 Check your version of windows by pressing <kbd>Win</kbd> + <kbd>R</kbd> then type `winver` in the box.
 
@@ -31,7 +33,7 @@ Check your version of windows by pressing <kbd>Win</kbd> + <kbd>R</kbd> then typ
 
 You need at least this version of Windows to be able to use WSL2, and for that, when I installed this (2020-04-10) you needed to be on the **windows insider program**, found in:
 
-`settings > update & security`
+> settings > update & security
 
 I chose the "slow" version of the insider program.
 
@@ -42,7 +44,7 @@ I was previously on a 18XX build and WSL2, though it would install without issue
 
 ### Enable WSL
 
-**this will probably not be needed in a few months, when WSL2 will be packaged with Windows as standard**
+**This will probably not be needed in a few months, when WSL2 will be packaged with Windows as standard.**
 
 Hit the Start button in the taskbar and type "Turn Windows features on or off" - this is also accessible via the Control Panel. 
 
@@ -60,17 +62,21 @@ Then once WSL is installed, download the WSL2 package from Microsoft or Google i
 
 Check your distros:
 
-`wsl -l -v`
+```
+wsl -l -v
+```
 
 Then:
 
-`wsl --set-version <disto-name> 2`
+```
+wsl --set-version <disto-name> 2
+```
 
 ### MobaXterm - to run Graphical Linux Apps
 
 IF you want to run graphical apps from WSL you will need an X-server.
 
-Download, install free version of MobaXterm.
+Download, install free version of [MobaXterm](https://mobaxterm.mobatek.net/).
 
 Always run MobaXterm before firing up your WSL, and in top righthand corner it should say "X-server running".
 
@@ -90,11 +96,13 @@ The above `source ~/.bashrc` command should be added to the profile so that it r
 
 I had already installed WSL2 but started getting these errors when installing different packages:
 
-`The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 8C718D3B5072E1F5`
+```
+The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 8C718D3B5072E1F5
 
-`gpg: keyserver receive failed: No dirmngr`
+gpg: keyserver receive failed: No dirmngr
 
-`gpg: can't connect to the agent: IPC connect call failed`
+gpg: can't connect to the agent: IPC connect call failed
+```
 
 ---
 <br>
@@ -102,7 +110,9 @@ Even though I had installed the WSL2 update, it had not in fact *activated*, thi
 
 **You can check your WSL version by running this command in ubuntu**:
 
-`[ $(grep -oE 'gcc version ([0-9]+)' /proc/version | awk '{print $3}') -gt 5 ] && \ echo "WSL2" || echo "WSL1"`
+```bash
+$ [ $(grep -oE 'gcc version ([0-9]+)' /proc/version | awk '{print $3}') -gt 5 ] && \ echo "WSL2" || echo "WSL1"
+```
 
 (This command only seems to work in WSL 1.)
 
@@ -121,7 +131,9 @@ PS>
 
 Ensure you have Ubuntu installed via the Windows Store and then to convert your existing distro to WSL 2:
 
-`wsl --set-version <disto-name> 2`
+```bash
+wsl --set-version <disto-name> 2
+```
 
 #### possible issue with paths
 
