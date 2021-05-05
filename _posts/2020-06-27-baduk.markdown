@@ -1,9 +1,0 @@
----
-layout: post
-title: Simple Baduk (Go game)
-description: Vanilla JavaScript 9 x 9 go board for 2 players.
-tags: javascript game-dev go-game programming
-redirect: https://www.iansedano.com/Simple_Baduk
----
-
-
