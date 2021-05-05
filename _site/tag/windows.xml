@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Your Title - windows</title>
+ <link href="http://localhost:4000//tag/windows.xml" rel="self"/>
+ <link href="http://localhost:4000/tag/windows.html"/>
+ <updated>2021-05-05T13:03:28+02:00</updated>
+ <id>http://example.com/tag/windows.html</id>
+ <author>
+   <name>Author Here</name>
+ </author>
+ 
+ <entry>
+   <title>Setting up WSL on Windows 10</title>
+   <link href="http://example.com/2020/04/10/installing_wsl.html"/>
+   <updated>2020-04-10T00:00:00+02:00</updated>
+   <id>http://example.com/2020/04/10/installing_wsl</id>
+   <content type="html">&lt;p&gt;&lt;em&gt;(These instructions are now most likely out of date)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a quick guide in getting set up with WSL (Windows Subsystem for Linux). There are many tutorials out there but in my case it was slightly different. So I putting this out there for anyone who might have use of it.&lt;/p&gt;
+
+&lt;p&gt;Why would you want WSL?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;To use Linux tools without having to have a virtual machine or dual boot. I commonly use these on WSL and not windows:
+    &lt;ul&gt;
+      &lt;li&gt;Jekyll (because it works)&lt;/li&gt;
+      &lt;li&gt;Git (because SSH)&lt;/li&gt;
+      &lt;li&gt;Pyspread (with GUI!)&lt;/li&gt;
+      &lt;li&gt;Grep&lt;/li&gt;
+      &lt;li&gt;This is a growing list.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;fresh-install&quot;&gt;Fresh Install&lt;/h2&gt;
+
+&lt;h3 id=&quot;making-sure-you-have-the-right-version-of-windows&quot;&gt;Making sure you have the right version of Windows&lt;/h3&gt;
+
+&lt;p&gt;While you can install WSL on previous builds, WSL2 is really what you want to go for. I found so many weird bugs in WSL1 while WSL2, just works.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;This will probably not be needed in a few months, when WSL2 will be packaged with Windows as standard.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Check your version of windows by pressing &lt;kbd&gt;Win&lt;/kbd&gt; + &lt;kbd&gt;R&lt;/kbd&gt; then type &lt;code class=&quot;highlighter-rouge&quot;&gt;winver&lt;/code&gt; in the box.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/a3oicv3ivpkif61/winver.png?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You need at least this version of Windows to be able to use WSL2, and for that, when I installed this (2020-04-10) you needed to be on the &lt;strong&gt;windows insider program&lt;/strong&gt;, found in:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;settings &amp;gt; update &amp;amp; security&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I chose the “slow” version of the insider program.&lt;/p&gt;
+
+&lt;p&gt;This may take a while to update, so be sure to check your &lt;code class=&quot;highlighter-rouge&quot;&gt;winver&lt;/code&gt; before proceeding any further.&lt;/p&gt;
+
+&lt;p&gt;I was previously on a 18XX build and WSL2, though it would install without issues, would not activate properly.&lt;/p&gt;
+
+&lt;h3 id=&quot;enable-wsl&quot;&gt;Enable WSL&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;This will probably not be needed in a few months, when WSL2 will be packaged with Windows as standard.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Hit the Start button in the taskbar and type “Turn Windows features on or off” - this is also accessible via the Control Panel.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Enable Windows Subsystem for Linux.&lt;/li&gt;
+  &lt;li&gt;Enable Virtual Machine Platform (Note, this may break any virtual machines you have).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once this is done 
+Download and Install Ubuntu for Windows from Microsoft store.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;DO NOT MODIFY LINUX FILES FROM WINDOWS!!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I can’t recommend installing Visual Studio Code enough. There is a plugin that enables connection to WSL, and once you are connected to the WSL through VS code, things work very well.&lt;/p&gt;
+
+&lt;p&gt;Then once WSL is installed, download the WSL2 package from Microsoft or Google it to find the latest package. Install that and then upgrade your distro from Powershell.&lt;/p&gt;
+
+&lt;p&gt;Check your distros:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wsl -l -v
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wsl --set-version &amp;lt;disto-name&amp;gt; 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;mobaxterm---to-run-graphical-linux-apps&quot;&gt;MobaXterm - to run Graphical Linux Apps&lt;/h3&gt;
+
+&lt;p&gt;IF you want to run graphical apps from WSL you will need an X-server.&lt;/p&gt;
+
+&lt;p&gt;Download, install free version of &lt;a href=&quot;https://mobaxterm.mobatek.net/&quot;&gt;MobaXterm&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Always run MobaXterm before firing up your WSL, and in top righthand corner it should say “X-server running”.&lt;/p&gt;
+
+&lt;h4 id=&quot;set-the-display-in-wsl&quot;&gt;Set the DISPLAY in WSL&lt;/h4&gt;
+
+&lt;p&gt;You will need to config WSL to send the display to windows.&lt;/p&gt;
+
+&lt;p&gt;run &lt;code class=&quot;highlighter-rouge&quot;&gt;nano ~/.bashrc&lt;/code&gt; then add this to bottom of file &lt;code class=&quot;highlighter-rouge&quot;&gt;export DISPLAY=:0&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;to apply &lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bashrc&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;The above &lt;code class=&quot;highlighter-rouge&quot;&gt;source ~/.bashrc&lt;/code&gt; command should be added to the profile so that it runs every time you start WSL.&lt;/p&gt;
+
+&lt;h2 id=&quot;if-you-installed-it-but-its-not-working-properly&quot;&gt;If you installed it but its not working properly&lt;/h2&gt;
+
+&lt;p&gt;I had already installed WSL2 but started getting these errors when installing different packages:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 8C718D3B5072E1F5
+
+gpg: keyserver receive failed: No dirmngr
+
+gpg: can't connect to the agent: IPC connect call failed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;&lt;br /&gt;
+Even though I had installed the WSL2 update, it had not in fact &lt;em&gt;activated&lt;/em&gt;, this was because my Windows build was too old. See instructions above for how to get a newer build of windows.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;You can check your WSL version by running this command in ubuntu&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oE&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'gcc version ([0-9]+)'&lt;/span&gt; /proc/version | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $3}'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-gt&lt;/span&gt; 5 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;WSL2&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;WSL1&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;(This command only seems to work in WSL 1.)&lt;/p&gt;
+
+&lt;p&gt;Alternatively this command: &lt;code class=&quot;highlighter-rouge&quot;&gt;wsl -l -v&lt;/code&gt; will not be recognized in WSL1.&lt;/p&gt;
+
+&lt;p&gt;Upgrade windows, then find the WSL2 installer package with Google and install it.&lt;/p&gt;
+
+&lt;p&gt;after which &lt;code class=&quot;highlighter-rouge&quot;&gt;wsl -l -v&lt;/code&gt; should work in Powershell and show that you have version 1 of WSL, or no distro installed.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;PS&amp;gt; wsl -l -v
+  NAME      STATE           VERSION
+* Ubuntu    Running         2
+PS&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ensure you have Ubuntu installed via the Windows Store and then to convert your existing distro to WSL 2:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wsl &lt;span class=&quot;nt&quot;&gt;--set-version&lt;/span&gt; &amp;lt;disto-name&amp;gt; 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;possible-issue-with-paths&quot;&gt;possible issue with paths&lt;/h4&gt;
+
+&lt;p&gt;When I got Ubuntu up and running it would throw an error complaining about my path.&lt;/p&gt;
+
+&lt;p&gt;This is because Linux doesn’t accept spaces in its paths, but Windows does, and WSL inherits its paths from Windows.&lt;/p&gt;
+
+&lt;p&gt;To fix this I went into &lt;code class=&quot;highlighter-rouge&quot;&gt;regedit&lt;/code&gt;, navigated to:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Environment\Path&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;and put quotations around any paths with spaces.&lt;/p&gt;
+
+&lt;p&gt;I would recommend getting familiar with your .bashrc and .bash_profile files (always edit these from within WSL!) as many of the issues I have encountered seem to stem from this getting messed up or not being configured properly.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Good luck! If you get through it I am sure you will enjoy WSL! For me it is far more practical than other Linux solutions for Windows users, being far more practical than VMs, dual-booting, Cygwin or Git Bash (ymmv).&lt;/p&gt;
+</content>
+ </entry>
+ 
+</feed>

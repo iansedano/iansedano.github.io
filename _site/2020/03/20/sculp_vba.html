@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="iansedano" />
+
+    
+	
+</head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>iansedano</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/about/">iansedano</a>
+	</div>
+	<p class="lead">Personal Blog</p></div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+		<li class="nav-title">Pages</li>
+		<li>
+			<a class="nav-item" href="/">Posts</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		<li>
+			<a class="nav-item" href="/about/">
+				About
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<li>
+			<a class="nav-item" href="/pages/tags.html">
+				All Tags
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</ul>
+</div>
+
+<!-- <div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#personal projects">
+				<span class="name">personal projects</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div> -->
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+		<li class="nav-title">Top Tags</li>
+
+		
+		
+		
+		
+		<li><a href="/tag/programming">programming (17)</a></li>
+		
+		
+		<li><a href="/tag/music">music (8)</a></li>
+		
+		
+		<li><a href="/tag/art">art (7)</a></li>
+		
+		
+		<li><a href="/tag/javascript">javascript (6)</a></li>
+		
+		
+		<li><a href="/tag/design">design (6)</a></li>
+		
+		
+		<li><a href="/tag/hardware">hardware (5)</a></li>
+		
+		
+		<li><a href="/tag/video">video (4)</a></li>
+		
+		
+		<li><a href="/tag/p5">p5 (4)</a></li>
+		
+	</ul>
+</div>
+
+
+<div class="sidebar-item sidebar-footer">
+	<p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a></p>
+</div>
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			VBA Artworks
+		</div>
+		<time class="post-date dt-published" datetime="2020-03-20T00:00:00+01:00" itemprop="datePublished">2020/03/20
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<p>Unfortunately I am unable to share the complete source of this code due to it being sensitive information.</p>
+
+<p>Though I can share some snippets and my general approach.</p>
+
+<h2 id="the-data">The Data</h2>
+
+<p>The data being modelled is artworks. The main data is in this format:</p>
+
+<ul>
+  <li>Version ID - unique and numeric</li>
+  <li>Title</li>
+  <li>Materials summary i.e. “Bronze”</li>
+  <li>Size summary i.e. “Large”</li>
+</ul>
+
+<p>Each artwork is a specific edition of a larger family. Edition sizes range from 1 to hundreds. Every artwork has to be unique. Other information tracked for every individual sculpture is.</p>
+
+<ul>
+  <li>producer</li>
+  <li>purchase order</li>
+  <li>exporter</li>
+  <li>owner</li>
+  <li>shipping information and history</li>
+  <li>artwork dimensions</li>
+  <li>crate dimensions</li>
+  <li>dates</li>
+  <li>costs</li>
+  <li>prices</li>
+</ul>
+
+<p>Up until I started to write this application, the data was kept in one table. With the applications help we have split the data into two tables. It is one step closer to being a database.</p>
+
+<p>The main table is no different because I was not allowed to make changes because the team is already used to the format and making changes however they like. This means that there is a lot of duplicate data. That said, in the new version table, there is hardly any duplicate data, and this is used to check the consistency of the main table. It is glue code, and yet it will probably stay in use for a long time to come.</p>
+
+<p>While everyone I have consulted with has suggested that this data should be in a database - at only 7000 artworks so far, it has been manageable, though messy, with VBA. The main advantage of taking this glue code approach has been that to the users of this spreadsheet, nothing has changed. They are able to use it in exactly they same way they have been using it for years. The only things that has changed have been added features, allowing them to do what they have always done, quicker.</p>
+
+<h2 id="tools-used">Tools used</h2>
+
+<ul>
+  <li><strong>Rubberduck</strong> - vba IDE utilities.</li>
+  <li><strong>Git-XL</strong> - Git extension allowing proper version control for excel files with vba.</li>
+  <li><strong>Sublime text</strong> - for nice syntax highlighting and search and replace utilities.</li>
+  <li><strong>Text Editor Anywhere</strong> - to be able to edit in Sublime while text is automatically updated in the VBA IDE.</li>
+</ul>
+
+<h2 id="general-structure">General Structure</h2>
+
+<ul>
+  <li>Classes
+    <ul>
+      <li>Artwork - representing an individual work of art</li>
+      <li>Version - representing a family to which and Artwork belongs.</li>
+      <li>Refs - Utility class to define a bunch of references without making global variables (caused many many bugs).</li>
+    </ul>
+  </li>
+  <li>Modules
+    <ul>
+      <li>Object Dictionary Functions - functions such as creating, manipulating, merging Object Dictionaries (Artwork and Versions).</li>
+      <li>Tests - A few tests to ensure nothing is broken</li>
+      <li>Levenshtein - An implementation of the Levenshtein distance algorithm for searching.</li>
+      <li>Picture Report - Fetches pictures from external folder based on the ID of Artworks, and inserts them into the spreadsheet, properly sized.</li>
+      <li>General Subs - Higher level subroutines that draw on the functions</li>
+      <li>Utilities - conversions, cleaning, trimming etc.</li>
+    </ul>
+  </li>
+  <li>Forms
+    <ul>
+      <li>Dashboard - Simple dashboard with buttons to different forms.</li>
+      <li>Merge Ranges - A graphical way to execute a INDEX-MATCH without using formulas.</li>
+      <li>New Pieces - Insert new sculptures and auto-filling data based on version.</li>
+      <li>Search - A reference tool to quickly search the versions.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="building-the-object-dictionary">Building the Object Dictionary</h2>
+
+<p>This is the heart of the application. Instead of iterating over the rows for every operation, the data is dumped into an Object, which then is inserted into a dictionary. This results in a huge speed boost. At most, the operations I carry out with the Object dictionaries only take a few seconds.</p>
+
+<p>I wrote a function that takes as arguments</p>
+
+<ul>
+  <li>a Class name (Artworks or Versions)</li>
+  <li>a range to make into objects</li>
+  <li>a dictionary of fields
+    <ul>
+      <li>The dictionary of fields is a way to limit the information loaded into the object dictionary. Since the class is able to contain all the different columns in the spreadsheet, but only a few of these are needed for most operations, a dictionary of fields, i.e. <code class="highlighter-rouge">("id": 1)</code> which indicated that the <code class="highlighter-rouge">id</code> field is at index 1.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>And outputs a dictionary of objects. In case of Artworks, one object per artwork, and in case of versions, one object per version.</p>
+
+<div class="language-visualbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Function</span> <span class="nf">dictObjects</span><span class="p">(</span><span class="n">cls</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">,</span> <span class="n">rg</span> <span class="ow">As</span> <span class="n">Range</span><span class="p">,</span> <span class="n">dictFields</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span><span class="p">)</span>
+    
+    <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"initializing dictObjects"</span>
+	
+    <span class="k">Dim</span> <span class="nv">arr</span> <span class="ow">As</span> <span class="kt">Variant</span><span class="p">:</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">rg</span>
+    <span class="k">Dim</span> <span class="nv">dict</span> <span class="ow">As</span> <span class="k">New</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+    <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Variant</span> <span class="c1">'for iterating through the array</span>
+    <span class="k">Dim</span> <span class="nv">k</span> <span class="ow">As</span> <span class="kt">Variant</span> <span class="c1">'for iterating through keys in ObjDict</span>
+    <span class="k">Dim</span> <span class="nv">arrIndex</span> <span class="ow">As</span> <span class="kt">Variant</span> <span class="c1">'to hold the index</span>
+    <span class="k">Dim</span> <span class="nv">arrVal</span> <span class="ow">As</span> <span class="kt">Variant</span> <span class="c1">'for assigning values</span>
+
+    <span class="k">If</span> <span class="n">cls</span> <span class="o">=</span> <span class="s">"clsArtwork"</span> <span class="k">Then</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"Artwork Class detected, starting to populate dictionary"</span>
+        
+        <span class="k">Dim</span> <span class="nv">oArtwork</span> <span class="ow">As</span> <span class="n">clsArtwork</span> <span class="c1">'defines temporary object as clsArtwork</span>
+        <span class="c1">' go through each line in the arr</span>
+        <span class="c1">' set the value or properties as per the dictFields dict.</span>
+        <span class="k">For</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">To</span> <span class="n">UBound</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">arrIndex</span> <span class="o">=</span> <span class="n">arr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">If</span> <span class="n">dict</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">arrIndex</span><span class="p">)</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+                <span class="c1">'create new object</span>
+		<span class="k">Set</span> <span class="n">oArtwork</span> <span class="o">=</span> <span class="k">New</span> <span class="n">clsArtwork</span>
+		<span class="c1">' iterate through the dictFields</span>
+                <span class="k">For</span> <span class="k">Each</span> <span class="n">k</span> <span class="ow">In</span> <span class="n">dictFields</span><span class="p">.</span><span class="n">Keys</span> 
+                    <span class="n">arrVal</span> <span class="o">=</span> <span class="n">arr</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">dictFields</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+                    <span class="k">If</span> <span class="n">arrVal</span> <span class="o">&lt;&gt;</span> <span class="n">vbNullString</span> <span class="k">Then</span>
+			<span class="c1">'assign value in cell to property "k"</span>
+                        <span class="n">CallByName</span> <span class="n">oArtwork</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">VbLet</span><span class="p">,</span> <span class="n">arrVal</span> 
+                    <span class="k">End</span> <span class="k">If</span>
+                <span class="k">Next</span>
+                <span class="n">oArtwork</span><span class="p">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">i</span>
+		<span class="c1">' Add the artwork object to the collection</span>
+                <span class="n">dict</span><span class="p">.</span><span class="n">Add</span> <span class="n">arrIndex</span><span class="p">,</span> <span class="n">oArtwork</span> 
+            <span class="k">End</span> <span class="k">If</span>
+        <span class="k">Next</span> <span class="n">i</span>
+        <span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"Artwork Dictionary Complete"</span>
+    
+    <span class="k">ElseIf</span> <span class="n">cls</span> <span class="o">=</span> <span class="s">"clsVersion"</span> <span class="k">Then</span>
+	<span class="c1">' does the same as above except does it for Version.</span>
+	
+    <span class="k">Else</span>
+        <span class="n">MsgBox</span> <span class="s">"class not recognized"</span>
+        <span class="k">End</span>
+    <span class="k">End</span> <span class="k">If</span>
+    <span class="k">Set</span> <span class="n">dictObjects</span> <span class="o">=</span> <span class="n">dict</span>
+
+<span class="k">End</span> <span class="k">Function</span>
+</code></pre></div></div>
+
+<p>Below is one of the scripts that is used to check if the Version list is updated. Every Artwork needs to belong to a version. Orders are often created in a rush, and the version is not updated. The following Sub creates an Artwork Object dictionary, a Version Object dictionary and then compared them.</p>
+
+<p>This makes reference to various other functions, the main ones of which, are posted at the end.</p>
+
+<div class="language-visualbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Sub</span> <span class="nf">UpdateVersionList</span><span class="p">()</span>
+
+	<span class="n">Application</span><span class="p">.</span><span class="n">ScreenUpdating</span> <span class="o">=</span> <span class="k">False</span>
+	<span class="k">Dim</span> <span class="nv">Refs</span> <span class="ow">As</span> <span class="n">clsRefs</span>
+	<span class="k">Set</span> <span class="n">Refs</span> <span class="o">=</span> <span class="k">New</span> <span class="n">clsRefs</span>
+
+	<span class="c1">'Field map for Master Table</span>
+	<span class="k">Dim</span> <span class="nv">dictMstFields</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">Set</span> <span class="n">dictMstFields</span> <span class="o">=</span> <span class="k">New</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">With</span> <span class="n">dictMstFields</span>
+		<span class="p">.</span><span class="n">Add</span> <span class="s">"code_serial"</span><span class="p">,</span> <span class="mi">7</span>
+		<span class="p">.</span><span class="n">Add</span> <span class="s">"edition"</span><span class="p">,</span> <span class="mi">8</span>
+		<span class="p">.</span><span class="n">Add</span> <span class="s">"title"</span><span class="p">,</span> <span class="mi">9</span>
+		<span class="p">.</span><span class="n">Add</span> <span class="s">"material"</span><span class="p">,</span> <span class="mi">10</span>
+		<span class="p">.</span><span class="n">Add</span> <span class="s">"size"</span><span class="p">,</span> <span class="mi">11</span>
+	<span class="k">End</span> <span class="k">With</span>
+
+	<span class="c1">' Field map for Stock Code Table</span>
+	<span class="k">Dim</span> <span class="nv">dictStockCodeFields</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">Set</span> <span class="n">dictStockCodeFields</span> <span class="o">=</span> <span class="k">New</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">With</span> <span class="n">dictStockCodeFields</span>
+		<span class="p">.</span><span class="n">Add</span> <span class="s">"title"</span><span class="p">,</span> <span class="mi">2</span>
+		<span class="p">.</span><span class="n">Add</span> <span class="s">"material"</span><span class="p">,</span> <span class="mi">3</span>
+		<span class="p">.</span><span class="n">Add</span> <span class="s">"size"</span><span class="p">,</span> <span class="mi">4</span>
+	<span class="k">End</span> <span class="k">With</span>
+
+	
+	<span class="k">Call</span> <span class="n">Utils</span><span class="p">.</span><span class="n">clearDebugConsole</span>
+
+	<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"Clearing VBAOutput"</span>
+	<span class="n">Refs</span><span class="p">.</span><span class="n">wsOutput</span><span class="p">.</span><span class="n">Cells</span><span class="p">.</span><span class="n">Clear</span>
+
+	<span class="c1">' Master Range to Artwork Object dict</span>
+	<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"trimming values in master"</span>
+	<span class="n">Utils</span><span class="p">.</span><span class="n">TrimRange</span> <span class="n">Refs</span><span class="p">.</span><span class="n">rgMaster</span><span class="p">,</span> <span class="n">dictMstFields</span>
+	<span class="k">Dim</span> <span class="nv">dictMaster</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">Set</span> <span class="n">dictMaster</span> <span class="o">=</span> <span class="k">New</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">Set</span> <span class="n">dictMaster</span> <span class="o">=</span> <span class="n">dictObjects</span><span class="p">(</span><span class="s">"clsArtwork"</span><span class="p">,</span> <span class="n">Refs</span><span class="p">.</span><span class="n">rgMaster</span><span class="p">,</span> <span class="n">dictMstFields</span><span class="p">)</span>
+	<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"dictMaster made"</span>
+
+	<span class="c1">' get versions from master range</span>
+	<span class="k">Dim</span> <span class="nv">dictUniqueMasterSerials</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">Set</span> <span class="n">dictUniqueMasterSerials</span> <span class="o">=</span> <span class="k">New</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">Set</span> <span class="n">dictUniqueMasterSerials</span> <span class="o">=</span> <span class="n">UniqueVersionsInArtworkDict</span><span class="p">(</span><span class="n">dictMaster</span><span class="p">,</span> <span class="s">"code_serial"</span><span class="p">)</span>
+	<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"dictUnique Serials made"</span>
+
+	<span class="c1">' Stock Code range to stock code Object dict</span>
+	<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"trimming values in stock codes"</span>
+	<span class="n">Utils</span><span class="p">.</span><span class="n">TrimRange</span> <span class="n">Refs</span><span class="p">.</span><span class="n">rgStockCodes</span><span class="p">,</span> <span class="n">dictStockCodeFields</span>
+	<span class="k">Dim</span> <span class="nv">dictStockCodes</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">Set</span> <span class="n">dictStockCodes</span> <span class="o">=</span> <span class="k">New</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">Set</span> <span class="n">dictStockCodes</span> <span class="o">=</span> <span class="n">dictObjects</span><span class="p">(</span><span class="s">"clsVersion"</span><span class="p">,</span> <span class="n">Refs</span><span class="p">.</span><span class="n">rgStockCodes</span><span class="p">,</span> <span class="n">dictStockCodeFields</span><span class="p">)</span>
+	<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"dictStockCodes made"</span>
+
+	<span class="c1">' see which serials from master are not in stock code list</span>
+	<span class="k">Dim</span> <span class="nv">dictNewSerials</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">Set</span> <span class="n">dictNewSerials</span> <span class="o">=</span> <span class="k">New</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+	<span class="k">Set</span> <span class="n">dictNewSerials</span> <span class="o">=</span> <span class="n">dictDiff</span><span class="p">(</span><span class="n">dictUniqueMasterSerials</span><span class="p">,</span> <span class="n">dictStockCodes</span><span class="p">)</span>
+	<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"dictNew Serials made"</span>
+
+	<span class="c1">' output results of pieces that need to be added</span>
+	<span class="n">PrintDictOfObjectsToSheet</span> <span class="n">dictNewSerials</span><span class="p">,</span> <span class="n">dictStockCodeFields</span><span class="p">,</span> <span class="n">Refs</span><span class="p">.</span><span class="n">wsOutput</span>
+	<span class="n">Debug</span><span class="p">.</span><span class="n">Print</span> <span class="s">"Operation Success!"</span>
+
+	<span class="n">MsgBox</span> <span class="s">"All done."</span>
+
+
+	<span class="k">End</span> <span class="k">Sub</span>
+</code></pre></div></div>
+
+<p>The following are the main subs and functions referred to in the above code block. Other subs and functions are basic helper functions to help break up the code, like <code class="highlighter-rouge">print dict to sheet</code> etc.</p>
+
+<div class="language-visualbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">Function</span> <span class="nf">UniqueVersionsInArtworkDict</span><span class="p">(</span><span class="n">dict</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span><span class="p">,</span> <span class="n">key</span> <span class="ow">As</span> <span class="kt">String</span><span class="p">)</span>
+    
+<span class="c1">' Keep only unique version ID in Artwork Object Dictionary</span>
+<span class="c1">' This will then be used to check against the Version Object Dictionary</span>
+	
+    <span class="k">Dim</span> <span class="nv">dictUniques</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+    <span class="k">Set</span> <span class="n">dictUniques</span> <span class="o">=</span> <span class="k">New</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+    
+    <span class="k">Dim</span> <span class="nv">oVersion</span> <span class="ow">As</span> <span class="n">clsVersion</span>
+
+    <span class="k">Dim</span> <span class="nv">k</span> <span class="ow">As</span> <span class="kt">Variant</span>
+    <span class="k">Dim</span> <span class="nv">i</span> <span class="ow">As</span> <span class="kt">Variant</span>
+
+    <span class="k">For</span> <span class="k">Each</span> <span class="n">k</span> <span class="ow">In</span> <span class="n">dict</span><span class="p">.</span><span class="n">Keys</span>
+        
+        <span class="n">i</span> <span class="o">=</span> <span class="n">CallByName</span><span class="p">(</span><span class="n">dict</span><span class="p">(</span><span class="n">k</span><span class="p">),</span> <span class="n">key</span><span class="p">,</span> <span class="n">VbGet</span><span class="p">)</span>
+
+        <span class="k">If</span> <span class="n">dictUniques</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+            <span class="k">Set</span> <span class="n">oVersion</span> <span class="o">=</span> <span class="k">New</span> <span class="n">clsVersion</span>
+            <span class="n">dictUniques</span><span class="p">.</span><span class="n">Add</span> <span class="n">i</span><span class="p">,</span> <span class="n">oVersion</span>
+            <span class="k">With</span> <span class="n">dictUniques</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+                <span class="p">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">dict</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">title</span>
+                <span class="p">.</span><span class="n">material</span> <span class="o">=</span> <span class="n">dict</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">material</span>
+                <span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">dict</span><span class="p">(</span><span class="n">k</span><span class="p">).</span><span class="n">size</span>
+            <span class="k">End</span> <span class="k">With</span>
+        <span class="k">End</span> <span class="k">If</span>
+    <span class="k">Next</span>
+    
+    <span class="k">Set</span> <span class="n">UniqueVersionsInArtworkDict</span> <span class="o">=</span> <span class="n">dictUniques</span>
+
+<span class="k">End</span> <span class="k">Function</span>
+
+
+
+<span class="k">Function</span> <span class="nf">dictDiff</span><span class="p">(</span><span class="n">dict1</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span><span class="p">,</span> <span class="n">dict2</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span><span class="p">)</span>
+
+<span class="c1">' Output any keys that are in dict1 but not in dict2.</span>
+
+    <span class="k">Dim</span> <span class="nv">k</span> <span class="ow">As</span> <span class="kt">Variant</span>
+    <span class="k">Dim</span> <span class="nv">k2</span> <span class="ow">As</span> <span class="kt">Variant</span>
+
+    <span class="k">Dim</span> <span class="nv">dictOutput</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span><span class="p">:</span> <span class="k">Set</span> <span class="n">dictOutput</span> <span class="o">=</span> <span class="k">New</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span>
+
+    <span class="k">For</span> <span class="k">Each</span> <span class="n">k</span> <span class="ow">In</span> <span class="n">dict1</span><span class="p">.</span><span class="n">Keys</span>
+        <span class="k">If</span> <span class="n">dict2</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">=</span> <span class="k">False</span> <span class="k">Then</span>
+            <span class="n">dictOutput</span><span class="p">.</span><span class="n">Add</span> <span class="n">k</span><span class="p">,</span> <span class="n">dict1</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+        <span class="k">End</span> <span class="k">If</span>
+    <span class="k">Next</span>
+
+    <span class="k">Set</span> <span class="n">dictDiff</span> <span class="o">=</span> <span class="n">dictOutput</span>
+    
+<span class="k">End</span> <span class="k">Function</span>
+
+
+
+<span class="k">Sub</span> <span class="nf">MergeDictsOfObjects</span><span class="p">(</span><span class="n">dictOrigin</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span><span class="p">,</span> <span class="n">dictDestination</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span><span class="p">,</span> <span class="n">_</span>
+                    <span class="n">dictFieldsToUpdate</span> <span class="ow">As</span> <span class="n">Scripting</span><span class="p">.</span><span class="n">Dictionary</span><span class="p">,</span> <span class="n">collChanges</span> <span class="ow">As</span> <span class="n">Collection</span><span class="p">)</span>
+
+<span class="c1">'  Take two dictionaries of Objects</span>
+<span class="c1">'  one Origin, one Destination</span>
+<span class="c1">'  Update Destination Dict object properties</span>
+<span class="c1">'  with the fields specified in dictFieldsToUpdate,</span>
+<span class="c1">'  Output a list of the keys that were updated in collChanges</span>
+
+
+
+    <span class="k">Dim</span> <span class="nv">kOrigin</span> <span class="ow">As</span> <span class="kt">Variant</span> <span class="c1">' Origin keys</span>
+    <span class="k">Dim</span> <span class="nv">kDestination</span> <span class="ow">As</span> <span class="kt">Variant</span> <span class="c1">' Destination keys</span>
+    <span class="k">Dim</span> <span class="nv">kField</span> <span class="ow">As</span> <span class="kt">Variant</span> <span class="c1">' Field keys</span>
+    <span class="k">Dim</span> <span class="nv">val</span> <span class="ow">As</span> <span class="kt">Variant</span>  <span class="c1">' Temporary holder of values</span>
+
+
+    <span class="k">For</span> <span class="k">Each</span> <span class="n">kOrigin</span> <span class="ow">In</span> <span class="n">dictOrigin</span><span class="p">.</span><span class="n">Keys</span>
+        <span class="k">If</span> <span class="n">dictDestination</span><span class="p">.</span><span class="n">Exists</span><span class="p">(</span><span class="n">kOrigin</span><span class="p">)</span> <span class="k">Then</span>
+            <span class="k">For</span> <span class="k">Each</span> <span class="n">kField</span> <span class="ow">In</span> <span class="n">dictFieldsToUpdate</span><span class="p">.</span><span class="n">Keys</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">CallByName</span><span class="p">(</span><span class="n">dictOrigin</span><span class="p">(</span><span class="n">kOrigin</span><span class="p">),</span> <span class="n">kField</span><span class="p">,</span> <span class="n">VbGet</span><span class="p">)</span>
+                <span class="n">CallByName</span> <span class="n">dictDestination</span><span class="p">(</span><span class="n">kOrigin</span><span class="p">),</span> <span class="n">kField</span><span class="p">,</span> <span class="n">VbLet</span><span class="p">,</span> <span class="n">val</span>
+            <span class="k">Next</span>
+            <span class="n">dictDestination</span><span class="p">(</span><span class="n">kOrigin</span><span class="p">).</span><span class="n">change</span> <span class="o">=</span> <span class="k">True</span>
+            <span class="n">collChanges</span><span class="p">.</span><span class="n">Add</span> <span class="n">kOrigin</span>
+        <span class="k">End</span> <span class="k">If</span>
+    <span class="k">Next</span>
+
+<span class="k">End</span> <span class="k">Sub</span>
+
+</code></pre></div></div>
+
+	</div>
+</article>
+		</div>
+	</div>
+  </body>
+</html>

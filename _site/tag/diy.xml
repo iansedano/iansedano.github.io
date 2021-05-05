@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Your Title - diy</title>
+ <link href="http://localhost:4000//tag/diy.xml" rel="self"/>
+ <link href="http://localhost:4000/tag/diy.html"/>
+ <updated>2021-05-05T13:03:28+02:00</updated>
+ <id>http://example.com/tag/diy.html</id>
+ <author>
+   <name>Author Here</name>
+ </author>
+ 
+ <entry>
+   <title>Arduino Tea Temperature Sensor</title>
+   <link href="http://example.com/2021/01/18/teaTemp.html"/>
+   <updated>2021-01-18T00:00:00+01:00</updated>
+   <id>http://example.com/2021/01/18/teaTemp</id>
+   <content type="html">&lt;p&gt;With the deepening of winter you may find yourself drinking lots of tea. Its unbeatable as a chest warming liquid. That feeling of hot but not too hot liquid warming your chest is such a relief when your working or living space is chilly. That is, if you drink it in time. There is a fine line between too hot and lukewarm, and the best experience is to be had the instant it has gone from being too hot, to just right (To my taste, that is around 70-75 degrees C).&lt;/p&gt;
+
+&lt;p&gt;Water has one of the highest &lt;a href=&quot;https://en.wikipedia.org/wiki/Thermal_mass&quot;&gt;thermal masses&lt;/a&gt; among liquids, yet even in an insulated tea cup, you put it down to cool while you start working on something and before you know it your tea is no longer heart-warming.&lt;/p&gt;
+
+&lt;p&gt;If you can relate to this, then grab yourself an Arduino Nano (or a cheap knock off). Wire up a temperature sensor, a buzzer, and upload this code:&lt;/p&gt;
+
+&lt;script src=&quot;http://gist-it.appspot.com/https://github.com/iansedano/teaTemp/blob/master/teaTemp.ino&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Source: https://github.com/iansedano/teaTemp/&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>La Maquina del Espacio-Tiempo</title>
+   <link href="http://example.com/2018/12/15/time_machine.html"/>
+   <updated>2018-12-15T00:00:00+01:00</updated>
+   <id>http://example.com/2018/12/15/time_machine</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/vrd2mdn3ykwkktc/2018-07-01%2015.52.19%20-%20Copy.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Juan Nieto and I decided to start playing together in around 2016 to see what we could come up with. We didn’t have many expectations going in but after a couple sessions playing covers I started to experiment with getting a computer involved.&lt;/p&gt;
+
+&lt;p&gt;The first song that really started the process was when I set up a simple loop and went between playing different key and guitar sounds. There was something magical in the interplay between the rigid loop and the organic rhythyms of Juan. His exuberance was well suited to the textures I made.&lt;/p&gt;
+
+&lt;p&gt;Every week I had something new to show him, and he started to call it “la maquina del espacio-tiempo” (the space-time machine), he even coined a catchphrase for it - “it can not only take you back and forward in time, but sideways too”&lt;/p&gt;
+
+&lt;p&gt;On of the defining features of the “machine” was to be an &lt;em&gt;alesis perc pad&lt;/em&gt;. It became our bass instrument.&lt;/p&gt;
+
+&lt;iframe class=&quot;insta-iframe&quot; src=&quot;//www.instagram.com/p/BlgGenznyRm/embed/&quot; width=&quot;612&quot; height=&quot;710&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;This is the first post in a series in which I will cover:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/Tech/087_Midi_bridge/&quot;&gt;Everything MIDI about this project&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Customized FCB1010&lt;/li&gt;
+  &lt;li&gt;Customized Synth&lt;/li&gt;
+  &lt;li&gt;DIY Rack &amp;amp; Cabling&lt;/li&gt;
+  &lt;li&gt;The PercPad Bass&lt;/li&gt;
+  &lt;li&gt;The Midi programming involved.&lt;/li&gt;
+  &lt;li&gt;Programming the DAW to control everything&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Siglo 22 / Smode feat. Royal Society</title>
+   <link href="http://example.com/2018/12/09/siglo22_smode.html"/>
+   <updated>2018-12-09T00:00:00+01:00</updated>
+   <id>http://example.com/2018/12/09/siglo22_smode</id>
+   <content type="html">&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/G1rwZaYIclA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Pairing up with Antonio Nieto to bring out the visual potential of the music machine proejct.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Taking a Hack-saw to an FCB1010</title>
+   <link href="http://example.com/personal%20projects/2017/05/02/fcb1010_cut.html"/>
+   <updated>2017-05-02T00:00:00+02:00</updated>
+   <id>http://example.com/personal%20projects/2017/05/02/fcb1010_cut</id>
+   <content type="html">&lt;p&gt;https://www.dropbox.com/s/86kkf1ezc03c6pt/2016-10-26%2012.37.20%20-%20Copy.jpg?raw=1&lt;/p&gt;
+
+&lt;p&gt;Taking the pedals off a FCB1010 with a hacksaw.
+This article is one in a series where I write about the most complicated, but most fun live setup I have ever had.&lt;/p&gt;
+
+&lt;p&gt;There are many midi footpedals on the market, but none perhaps as both robust and cheap as the FCB1010.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/8f0iswsx4n3iylj/FCB1010.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are many forums online dedicated to this footpedal and even custom EPROM chips you can buy to customize it’s function. The programming of this pedal is an article in itself so I will write another soon, about that.&lt;/p&gt;
+
+&lt;p&gt;What I did realize quite quickly is that the pedals that came on my unit were not very good. I have heard there is some variability, and if you are lucky, your pedals are actually useable. My issue with them was that they hardly had any range and the range they had was not fully responsive. Anyway, I decided that I would chop them off.&lt;/p&gt;
+
+&lt;p&gt;After commiting to this, you look inside the machine and take the pedals off (abel the wires in case you want to later install jacks for external foot pedals) you will see the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/5wrg50ajcpkaqfq/2016-10-04%2015.21.53-2.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the far left is the power socket (like a printer power cable), power switch, transformer.&lt;/p&gt;
+
+&lt;p&gt;From some reading online I found that the transformer steps down to 9V and then a diode array converts it to DC. So why not just use a guitar pedal power supply?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/hp0907t71mcfsdt/2016-10-04%2015.32.48.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The two yellow wires go to the diode array. You can use a center positive or a center negative 9V DC power supply. Just like a guitar pedal would. So you can just rip out the power socket, switch and transformer. I installed a small guitar pedal power jack, and wired it up (polarity doesnt matter due to diode array).&lt;/p&gt;
+
+&lt;p&gt;Then comes the long task of hacksawing through the aluminium chassis while trying to maintain a straight line.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/hdtwnzdvahtt8b4/2016-10-05%2009.13.40.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;
+&lt;img src=&quot;https://www.dropbox.com/s/0ys75t8ic9r8zd6/2016-10-05%2009.47.08.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I always thought the black plastic cheeks of the unit were unnecesarily bulky and ugly so I decided to try and carve some wooden cheeks.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/m9llflj9p6zswf1/2016-10-05%2013.38.03.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;
+&lt;img src=&quot;https://www.dropbox.com/s/ar1cfzbf6xvrqf1/2016-10-26%2012.37.25.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It took a long time also, and my fit up wasn’t great but I was happy with it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/c95kmja44kyv5e1/2016-10-05%2018.04.38.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It has run on a guitar pedal power supply ever since! I have never had it be underpowered, even when daisy chaining. Its much more compact and lighter.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/uuz5uwr2cukx05g/2016-10-26%2012.37.20.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I ended up buying another and did the same. Which I then sold, but while I used it I never had any problems, and the buyer left a nice review and have not heard from him since.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+</feed>

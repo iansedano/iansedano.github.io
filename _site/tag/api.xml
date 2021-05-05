@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Your Title - api</title>
+ <link href="http://localhost:4000//tag/api.xml" rel="self"/>
+ <link href="http://localhost:4000/tag/api.html"/>
+ <updated>2021-05-05T13:03:28+02:00</updated>
+ <id>http://example.com/tag/api.html</id>
+ <author>
+   <name>Author Here</name>
+ </author>
+ 
+ <entry>
+   <title>Twitter Bot</title>
+   <link href="http://example.com/2020/05/20/twitter_bot.html"/>
+   <updated>2020-05-20T00:00:00+02:00</updated>
+   <id>http://example.com/2020/05/20/twitter_bot</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+</feed>

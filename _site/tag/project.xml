@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Your Title - project</title>
+ <link href="http://localhost:4000//tag/project.xml" rel="self"/>
+ <link href="http://localhost:4000/tag/project.html"/>
+ <updated>2021-05-05T13:03:28+02:00</updated>
+ <id>http://example.com/tag/project.html</id>
+ <author>
+   <name>Author Here</name>
+ </author>
+ 
+ <entry>
+   <title>Intro to JavaScript course</title>
+   <link href="http://example.com/2021/02/01/javascript_course.html"/>
+   <updated>2021-02-01T00:00:00+01:00</updated>
+   <id>http://example.com/2021/02/01/javascript_course</id>
+   <content type="html">&lt;p&gt;Want to learn JavaScript?&lt;/p&gt;
+
+&lt;p&gt;I authored a &lt;a href=&quot;https://codingnomads.co/courses/learn-javascript-online-vanilla-javascript-basics&quot;&gt;JavaScript course&lt;/a&gt; funded and hosted by &lt;a href=&quot;https://codingnomads.co/&quot;&gt;Coding Nomads&lt;/a&gt;. It is suitable for beginners though some knowledge in another language or HTML and CSS is handy. It will be a challenge for a total beginner beginners, but if you are motivated, it is absolutely do-able.&lt;/p&gt;
+
+&lt;p&gt;The courses with Coding Nomads are designed to be gone through with a mentor, so there is not much hand-holding, but again, if you are motivated, then there is no reason you can’t do it &lt;em&gt;solo&lt;/em&gt;, even as a total beginner.&lt;/p&gt;
+
+&lt;p&gt;The great thing about JavaScript is that it’s everywhere, all you need to get started is access to an internet browser on a laptop or desktop. That’s all you need!&lt;/p&gt;
+
+&lt;p&gt;The start of the course is free, you just need to sign up for an account. To access the full course there is a monthly subscription fee that gives you access to the course and the very active forum (great for when you are stuck).&lt;/p&gt;
+
+&lt;p&gt;Coding Nomads is a small, family-run business, committed to social change. When the Covid 19 pandemic hit in 2020, they made it possible for me to make the transition to becoming a professional developer. I can’t recommend them enough.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+</feed>

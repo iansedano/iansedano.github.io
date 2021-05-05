@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Your Title - music</title>
+ <link href="http://localhost:4000//tag/music.xml" rel="self"/>
+ <link href="http://localhost:4000/tag/music.html"/>
+ <updated>2021-05-05T13:03:28+02:00</updated>
+ <id>http://example.com/tag/music.html</id>
+ <author>
+   <name>Author Here</name>
+ </author>
+ 
+ <entry>
+   <title>Dr Robotnik</title>
+   <link href="http://example.com/2020/05/01/Dr_Robotnik.html"/>
+   <updated>2020-05-01T00:00:00+02:00</updated>
+   <id>http://example.com/2020/05/01/Dr_Robotnik</id>
+   <content type="html">&lt;div style=&quot;text-align: center;&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/JXAT7v6FTTM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;A fun little video recreating the Boss theme from Sonic 2. A game my cousins and I spent many hours on. Fond memories.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>La Maquina del Espacio-Tiempo</title>
+   <link href="http://example.com/2018/12/15/time_machine.html"/>
+   <updated>2018-12-15T00:00:00+01:00</updated>
+   <id>http://example.com/2018/12/15/time_machine</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/vrd2mdn3ykwkktc/2018-07-01%2015.52.19%20-%20Copy.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Juan Nieto and I decided to start playing together in around 2016 to see what we could come up with. We didn’t have many expectations going in but after a couple sessions playing covers I started to experiment with getting a computer involved.&lt;/p&gt;
+
+&lt;p&gt;The first song that really started the process was when I set up a simple loop and went between playing different key and guitar sounds. There was something magical in the interplay between the rigid loop and the organic rhythyms of Juan. His exuberance was well suited to the textures I made.&lt;/p&gt;
+
+&lt;p&gt;Every week I had something new to show him, and he started to call it “la maquina del espacio-tiempo” (the space-time machine), he even coined a catchphrase for it - “it can not only take you back and forward in time, but sideways too”&lt;/p&gt;
+
+&lt;p&gt;On of the defining features of the “machine” was to be an &lt;em&gt;alesis perc pad&lt;/em&gt;. It became our bass instrument.&lt;/p&gt;
+
+&lt;iframe class=&quot;insta-iframe&quot; src=&quot;//www.instagram.com/p/BlgGenznyRm/embed/&quot; width=&quot;612&quot; height=&quot;710&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;This is the first post in a series in which I will cover:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;/Tech/087_Midi_bridge/&quot;&gt;Everything MIDI about this project&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Customized FCB1010&lt;/li&gt;
+  &lt;li&gt;Customized Synth&lt;/li&gt;
+  &lt;li&gt;DIY Rack &amp;amp; Cabling&lt;/li&gt;
+  &lt;li&gt;The PercPad Bass&lt;/li&gt;
+  &lt;li&gt;The Midi programming involved.&lt;/li&gt;
+  &lt;li&gt;Programming the DAW to control everything&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Siglo 22 / Smode feat. Royal Society</title>
+   <link href="http://example.com/2018/12/09/siglo22_smode.html"/>
+   <updated>2018-12-09T00:00:00+01:00</updated>
+   <id>http://example.com/2018/12/09/siglo22_smode</id>
+   <content type="html">&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/G1rwZaYIclA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Pairing up with Antonio Nieto to bring out the visual potential of the music machine proejct.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>MIDI for the bridge</title>
+   <link href="http://example.com/2018/07/01/Midi_bridge.html"/>
+   <updated>2018-07-01T00:00:00+02:00</updated>
+   <id>http://example.com/2018/07/01/Midi_bridge</id>
+   <content type="html">&lt;p&gt;This post will be an overview of the MIDI system I used for The Bridge. It is part of a series. See presentation post &lt;a href=&quot;/music/2018-12-15-time_machine/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;objective&quot;&gt;Objective&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;To be able to externalize all controls so that the laptop would only have to be touched in case of emergency.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;challenges&quot;&gt;Challenges&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Numerous Midi devices&lt;/li&gt;
+  &lt;li&gt;Some of these devices were midi USB and were unreliable.&lt;/li&gt;
+  &lt;li&gt;Designing and programming the complex system without requiring changes down the line.&lt;/li&gt;
+  &lt;li&gt;Overcoming software limitations when programming.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;harware&quot;&gt;Harware&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;perc pad - our bass instrument&lt;/li&gt;
+  &lt;li&gt;keyboard&lt;/li&gt;
+  &lt;li&gt;synth - for some sounds&lt;/li&gt;
+  &lt;li&gt;foot-pedal - to control the looper&lt;/li&gt;
+  &lt;li&gt;Midi-mix - as a master mixer&lt;/li&gt;
+  &lt;li&gt;NanoKontrol - as an additional mixer for the looper and global effects&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All of these devices apart from the synth were inputs to the interface. The only devices that received MIDI outputs were the synth and the Midi-mix.
+The Midi-mix and NanoKontrol were USB MIDI.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;connections&quot;&gt;Connections&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/h8mm3qtqjm5nga8/midisix4pix.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/kalq9f9l4cdoon1/uhmr.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These three devices were the cheapest way I could get everything to work smoothly. They are, a midi splitter, a merger, and a usb to midi host.&lt;/p&gt;
+
+&lt;p&gt;This was how I laid it out in the rack:
+&lt;img src=&quot;https://www.dropbox.com/s/bmhr5ylg66hdg0p/midi_connections_annotated.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I made custom midi cables to length so that any interference would be cut down to a minimum, thats why you can see such perfectly lengthed MIDI Cables!&lt;/p&gt;
+
+&lt;p&gt;All MIDI ins eventually needed to go to the interface, and all devices that needed to receive MIDI, the MIDI message had to come from the interface. This was all managed by assigning channels to the midi devices (MIDI has 16 channels).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/gjaq29zel9an4m5/200522_120128_EXCEL.png?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the excel in which I kept planned out all the mappings and channels.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;the-daw&quot;&gt;The DAW&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+The design in the DAW went through various iterations, starting out in Reaper and ending up in Ableton Live.
+The first iteration looked like this:
+&lt;img src=&quot;https://www.dropbox.com/s/ndq0o4qdskyuhl6/Annotation%202020-05-22%20101219.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It was a mess. The main problem I had was that I ended up with too many tracks to manage, to many sub mixes. This was solved by moving into ableton where Instrument Racks effectively allow you to have as many tracks as you want, but they all live within one track. It just makes everything much easier to manage. I probably had more fine grain control in Reaper, but for live performance, Ableton Live was much better.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/s9ssdmitzjrk8n5/Annotation%202020-05-22%20101907.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Everything just looked cleaner, easier to understand and control.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;the-control-panel&quot;&gt;The control panel&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+Here is an image of the controls that I programmed in for the MidiMix.
+&lt;img src=&quot;https://www.dropbox.com/s/0uxf26uv7rqhuso/2018-11-19%2019.26.32.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Along the bottom were almost always the master volume for each track. The knobs along the top were for FX controls. In the case of the pad, it was also to control the key and scale it was using. The buttons were used to enable specific sends and configured to light up when they were active. Later in this post I will go into more detail about how exactly I managed to program this with the aid of much research and Bome Midi Translator.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;keys&quot;&gt;Keys&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&quot;https://www.dropbox.com/s/o1owicjxj0r2ipe/Key%20instrument.png?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This was easy, just a simple instrument selector. I had organ sounds, piano sounds, I could route to the hardware synth, and pad like sounds for atmosphere.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;the-bass-pads&quot;&gt;The Bass Pads&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;iframe class=&quot;insta-iframe&quot; src=&quot;//www.instagram.com/p/BlgGenznyRm/embed/&quot; width=&quot;612&quot; height=&quot;710&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/c9qe4awl7qskf2e/pad%20instrument.png?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This was how it was set up. First the MIDI stream ran through a scale converter. When I say scale I say selection of 5 notes. It rode the line between a chord arpegio and a pentatonic scale. The root note was always on the foot pedal of the percpad, and the 4 other notes were complementary, the 3rd, the 5th etc.&lt;/p&gt;
+
+&lt;p&gt;Then it ran through a transposer that modified the key. I designed it so it would switch in 5ths going up and in 4ths going down, like the circle of fifths. This allowed us to implement some simple chord changes on the fly.&lt;/p&gt;
+
+&lt;p&gt;Finally a transposer to adjust the octave.&lt;/p&gt;
+
+&lt;p&gt;The spreadsheet I used to map out / compose the bass notes is below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/3jciensp2g5xcb5/200522_120152_EXCEL.png?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In general the I always had a note that was the 4th, then another sub-dominant functioning scale degree. Almost always the flat 7th, and for the dominant wither a 5th degree, an octave of the root, a 2nd degree or a tritone. Once I had everything in Ableton Live, it was much easier to adjust.&lt;/p&gt;
+
+&lt;p&gt;I also had some instruments at the end of the chain, but we mainly used the pad to control the hardware synth as that had many more tone shaping possibilities.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;programming-the-midimix&quot;&gt;Programming the MIDImix&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;
+Video coming soon.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Rosalie</title>
+   <link href="http://example.com/2018/02/22/rosalie.html"/>
+   <updated>2018-02-22T00:00:00+01:00</updated>
+   <id>http://example.com/2018/02/22/rosalie</id>
+   <content type="html">&lt;div class=&quot;embed-container&quot;&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/P17eXD6kDFk&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
+
+&lt;p&gt;A beautiful arrangement by Mike Dowling.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Small Boaters</title>
+   <link href="http://example.com/2017/05/22/Small-Boaters.html"/>
+   <updated>2017-05-22T00:00:00+02:00</updated>
+   <id>http://example.com/2017/05/22/Small Boaters</id>
+   <content type="html">&lt;p&gt;Collaboration with the Small Boaters.
+Around 2016 I joined the Small Boaters as a keyboard player.
+These are my favourite tracks from that time.&lt;/p&gt;
+
+&lt;p&gt;In this track I played the intro section and the backing guitars. The main melodic guitar that sounds like some psychedelic eastern line is Dani.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; allow=&quot;autoplay&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/267504024&amp;amp;color=%23ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&amp;amp;visual=true&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here I am playing rhodes and synth.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/e-H5ZNx_iVc&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Taking a Hack-saw to an FCB1010</title>
+   <link href="http://example.com/personal%20projects/2017/05/02/fcb1010_cut.html"/>
+   <updated>2017-05-02T00:00:00+02:00</updated>
+   <id>http://example.com/personal%20projects/2017/05/02/fcb1010_cut</id>
+   <content type="html">&lt;p&gt;https://www.dropbox.com/s/86kkf1ezc03c6pt/2016-10-26%2012.37.20%20-%20Copy.jpg?raw=1&lt;/p&gt;
+
+&lt;p&gt;Taking the pedals off a FCB1010 with a hacksaw.
+This article is one in a series where I write about the most complicated, but most fun live setup I have ever had.&lt;/p&gt;
+
+&lt;p&gt;There are many midi footpedals on the market, but none perhaps as both robust and cheap as the FCB1010.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/8f0iswsx4n3iylj/FCB1010.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There are many forums online dedicated to this footpedal and even custom EPROM chips you can buy to customize it’s function. The programming of this pedal is an article in itself so I will write another soon, about that.&lt;/p&gt;
+
+&lt;p&gt;What I did realize quite quickly is that the pedals that came on my unit were not very good. I have heard there is some variability, and if you are lucky, your pedals are actually useable. My issue with them was that they hardly had any range and the range they had was not fully responsive. Anyway, I decided that I would chop them off.&lt;/p&gt;
+
+&lt;p&gt;After commiting to this, you look inside the machine and take the pedals off (abel the wires in case you want to later install jacks for external foot pedals) you will see the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/5wrg50ajcpkaqfq/2016-10-04%2015.21.53-2.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From the far left is the power socket (like a printer power cable), power switch, transformer.&lt;/p&gt;
+
+&lt;p&gt;From some reading online I found that the transformer steps down to 9V and then a diode array converts it to DC. So why not just use a guitar pedal power supply?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/hp0907t71mcfsdt/2016-10-04%2015.32.48.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The two yellow wires go to the diode array. You can use a center positive or a center negative 9V DC power supply. Just like a guitar pedal would. So you can just rip out the power socket, switch and transformer. I installed a small guitar pedal power jack, and wired it up (polarity doesnt matter due to diode array).&lt;/p&gt;
+
+&lt;p&gt;Then comes the long task of hacksawing through the aluminium chassis while trying to maintain a straight line.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/hdtwnzdvahtt8b4/2016-10-05%2009.13.40.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;
+&lt;img src=&quot;https://www.dropbox.com/s/0ys75t8ic9r8zd6/2016-10-05%2009.47.08.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I always thought the black plastic cheeks of the unit were unnecesarily bulky and ugly so I decided to try and carve some wooden cheeks.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/m9llflj9p6zswf1/2016-10-05%2013.38.03.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;
+&lt;img src=&quot;https://www.dropbox.com/s/ar1cfzbf6xvrqf1/2016-10-26%2012.37.25.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It took a long time also, and my fit up wasn’t great but I was happy with it.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/c95kmja44kyv5e1/2016-10-05%2018.04.38.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It has run on a guitar pedal power supply ever since! I have never had it be underpowered, even when daisy chaining. Its much more compact and lighter.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.dropbox.com/s/uuz5uwr2cukx05g/2016-10-26%2012.37.20.jpg?raw=1&quot; class=&quot;post-img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I ended up buying another and did the same. Which I then sold, but while I used it I never had any problems, and the buyer left a nice review and have not heard from him since.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Fábel</title>
+   <link href="http://example.com/2013/10/15/Fabel-Collaboration.html"/>
+   <updated>2013-10-15T00:00:00+02:00</updated>
+   <id>http://example.com/2013/10/15/Fabel Collaboration</id>
+   <content type="html">&lt;p&gt;My first collab, Fábel was my neighbour, we met in the local craft beer bar downstairs. He initiated me into the world of music production. I wrote and performed all the acoustic guitar sounds on these tracks, which Fábel beautifully arranged.&lt;/p&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; allow=&quot;autoplay&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/163513045&amp;amp;color=%23ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&amp;amp;visual=true&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; allow=&quot;autoplay&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/157987114&amp;amp;color=%23ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&amp;amp;visual=true&quot;&gt;&lt;/iframe&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;300&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; allow=&quot;autoplay&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/75181756&amp;amp;color=%23ff5500&amp;amp;auto_play=false&amp;amp;hide_related=false&amp;amp;show_comments=true&amp;amp;show_user=true&amp;amp;show_reposts=false&amp;amp;show_teaser=true&amp;amp;visual=true&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+</feed>

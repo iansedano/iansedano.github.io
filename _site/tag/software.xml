@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Your Title - software</title>
+ <link href="http://localhost:4000//tag/software.xml" rel="self"/>
+ <link href="http://localhost:4000/tag/software.html"/>
+ <updated>2021-05-05T13:03:28+02:00</updated>
+ <id>http://example.com/tag/software.html</id>
+ <author>
+   <name>Author Here</name>
+ </author>
+ 
+ <entry>
+   <title>Bubbles</title>
+   <link href="http://example.com/2020/05/01/bubbles.html"/>
+   <updated>2020-05-01T00:00:00+02:00</updated>
+   <id>http://example.com/2020/05/01/bubbles</id>
+   <content type="html">&lt;div id=&quot;bubbles&quot; style=&quot;text-align: center;&quot;&gt;&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>VBA Artworks</title>
+   <link href="http://example.com/2020/03/20/sculp_vba.html"/>
+   <updated>2020-03-20T00:00:00+01:00</updated>
+   <id>http://example.com/2020/03/20/sculp_vba</id>
+   <content type="html">&lt;p&gt;Unfortunately I am unable to share the complete source of this code due to it being sensitive information.&lt;/p&gt;
+
+&lt;p&gt;Though I can share some snippets and my general approach.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-data&quot;&gt;The Data&lt;/h2&gt;
+
+&lt;p&gt;The data being modelled is artworks. The main data is in this format:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Version ID - unique and numeric&lt;/li&gt;
+  &lt;li&gt;Title&lt;/li&gt;
+  &lt;li&gt;Materials summary i.e. “Bronze”&lt;/li&gt;
+  &lt;li&gt;Size summary i.e. “Large”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Each artwork is a specific edition of a larger family. Edition sizes range from 1 to hundreds. Every artwork has to be unique. Other information tracked for every individual sculpture is.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;producer&lt;/li&gt;
+  &lt;li&gt;purchase order&lt;/li&gt;
+  &lt;li&gt;exporter&lt;/li&gt;
+  &lt;li&gt;owner&lt;/li&gt;
+  &lt;li&gt;shipping information and history&lt;/li&gt;
+  &lt;li&gt;artwork dimensions&lt;/li&gt;
+  &lt;li&gt;crate dimensions&lt;/li&gt;
+  &lt;li&gt;dates&lt;/li&gt;
+  &lt;li&gt;costs&lt;/li&gt;
+  &lt;li&gt;prices&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Up until I started to write this application, the data was kept in one table. With the applications help we have split the data into two tables. It is one step closer to being a database.&lt;/p&gt;
+
+&lt;p&gt;The main table is no different because I was not allowed to make changes because the team is already used to the format and making changes however they like. This means that there is a lot of duplicate data. That said, in the new version table, there is hardly any duplicate data, and this is used to check the consistency of the main table. It is glue code, and yet it will probably stay in use for a long time to come.&lt;/p&gt;
+
+&lt;p&gt;While everyone I have consulted with has suggested that this data should be in a database - at only 7000 artworks so far, it has been manageable, though messy, with VBA. The main advantage of taking this glue code approach has been that to the users of this spreadsheet, nothing has changed. They are able to use it in exactly they same way they have been using it for years. The only things that has changed have been added features, allowing them to do what they have always done, quicker.&lt;/p&gt;
+
+&lt;h2 id=&quot;tools-used&quot;&gt;Tools used&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Rubberduck&lt;/strong&gt; - vba IDE utilities.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Git-XL&lt;/strong&gt; - Git extension allowing proper version control for excel files with vba.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Sublime text&lt;/strong&gt; - for nice syntax highlighting and search and replace utilities.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Text Editor Anywhere&lt;/strong&gt; - to be able to edit in Sublime while text is automatically updated in the VBA IDE.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;general-structure&quot;&gt;General Structure&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Classes
+    &lt;ul&gt;
+      &lt;li&gt;Artwork - representing an individual work of art&lt;/li&gt;
+      &lt;li&gt;Version - representing a family to which and Artwork belongs.&lt;/li&gt;
+      &lt;li&gt;Refs - Utility class to define a bunch of references without making global variables (caused many many bugs).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Modules
+    &lt;ul&gt;
+      &lt;li&gt;Object Dictionary Functions - functions such as creating, manipulating, merging Object Dictionaries (Artwork and Versions).&lt;/li&gt;
+      &lt;li&gt;Tests - A few tests to ensure nothing is broken&lt;/li&gt;
+      &lt;li&gt;Levenshtein - An implementation of the Levenshtein distance algorithm for searching.&lt;/li&gt;
+      &lt;li&gt;Picture Report - Fetches pictures from external folder based on the ID of Artworks, and inserts them into the spreadsheet, properly sized.&lt;/li&gt;
+      &lt;li&gt;General Subs - Higher level subroutines that draw on the functions&lt;/li&gt;
+      &lt;li&gt;Utilities - conversions, cleaning, trimming etc.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Forms
+    &lt;ul&gt;
+      &lt;li&gt;Dashboard - Simple dashboard with buttons to different forms.&lt;/li&gt;
+      &lt;li&gt;Merge Ranges - A graphical way to execute a INDEX-MATCH without using formulas.&lt;/li&gt;
+      &lt;li&gt;New Pieces - Insert new sculptures and auto-filling data based on version.&lt;/li&gt;
+      &lt;li&gt;Search - A reference tool to quickly search the versions.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;building-the-object-dictionary&quot;&gt;Building the Object Dictionary&lt;/h2&gt;
+
+&lt;p&gt;This is the heart of the application. Instead of iterating over the rows for every operation, the data is dumped into an Object, which then is inserted into a dictionary. This results in a huge speed boost. At most, the operations I carry out with the Object dictionaries only take a few seconds.&lt;/p&gt;
+
+&lt;p&gt;I wrote a function that takes as arguments&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;a Class name (Artworks or Versions)&lt;/li&gt;
+  &lt;li&gt;a range to make into objects&lt;/li&gt;
+  &lt;li&gt;a dictionary of fields
+    &lt;ul&gt;
+      &lt;li&gt;The dictionary of fields is a way to limit the information loaded into the object dictionary. Since the class is able to contain all the different columns in the spreadsheet, but only a few of these are needed for most operations, a dictionary of fields, i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;(&quot;id&quot;: 1)&lt;/code&gt; which indicated that the &lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt; field is at index 1.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And outputs a dictionary of objects. In case of Artworks, one object per artwork, and in case of versions, one object per version.&lt;/p&gt;
+
+&lt;div class=&quot;language-visualbasic highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;Function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dictObjects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rg&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictFields&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;initializing dictObjects&quot;&lt;/span&gt;
+	
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rg&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dict&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;'for iterating through the array&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;'for iterating through keys in ObjDict&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arrIndex&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;'to hold the index&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;arrVal&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;'for assigning values&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;clsArtwork&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Then&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Artwork Class detected, starting to populate dictionary&quot;&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;oArtwork&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clsArtwork&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;'defines temporary object as clsArtwork&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;' go through each line in the arr&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;' set the value or properties as per the dictFields dict.&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;For&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;To&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UBound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;arrIndex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arrIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;False&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Then&lt;/span&gt;
+                &lt;span class=&quot;c1&quot;&gt;'create new object&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oArtwork&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clsArtwork&lt;/span&gt;
+		&lt;span class=&quot;c1&quot;&gt;' iterate through the dictFields&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;For&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Each&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictFields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Keys&lt;/span&gt; 
+                    &lt;span class=&quot;n&quot;&gt;arrVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictFields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+                    &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrVal&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vbNullString&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Then&lt;/span&gt;
+			&lt;span class=&quot;c1&quot;&gt;'assign value in cell to property &quot;k&quot;&lt;/span&gt;
+                        &lt;span class=&quot;n&quot;&gt;CallByName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oArtwork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VbLet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrVal&lt;/span&gt; 
+                    &lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;Next&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;oArtwork&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+		&lt;span class=&quot;c1&quot;&gt;' Add the artwork object to the collection&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;arrIndex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oArtwork&lt;/span&gt; 
+            &lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;Next&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Artwork Dictionary Complete&quot;&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;ElseIf&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;clsVersion&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Then&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;' does the same as above except does it for Version.&lt;/span&gt;
+	
+    &lt;span class=&quot;k&quot;&gt;Else&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;MsgBox&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;class not recognized&quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;End&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictObjects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dict&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Function&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Below is one of the scripts that is used to check if the Version list is updated. Every Artwork needs to belong to a version. Orders are often created in a rush, and the version is not updated. The following Sub creates an Artwork Object dictionary, a Version Object dictionary and then compared them.&lt;/p&gt;
+
+&lt;p&gt;This makes reference to various other functions, the main ones of which, are posted at the end.&lt;/p&gt;
+
+&lt;div class=&quot;language-visualbasic highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;Sub&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;UpdateVersionList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+	&lt;span class=&quot;n&quot;&gt;Application&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ScreenUpdating&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;False&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Refs&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clsRefs&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Refs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clsRefs&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;'Field map for Master Table&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dictMstFields&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictMstFields&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;With&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictMstFields&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;code_serial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;edition&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;material&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;With&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;' Field map for Stock Code Table&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dictStockCodeFields&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictStockCodeFields&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;With&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictStockCodeFields&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;material&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;With&lt;/span&gt;
+
+	
+	&lt;span class=&quot;k&quot;&gt;Call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Utils&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clearDebugConsole&lt;/span&gt;
+
+	&lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Clearing VBAOutput&quot;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;Refs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wsOutput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Cells&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Clear&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;' Master Range to Artwork Object dict&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;trimming values in master&quot;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;Utils&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TrimRange&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Refs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rgMaster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictMstFields&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dictMaster&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictMaster&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictMaster&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictObjects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;clsArtwork&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Refs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rgMaster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictMstFields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dictMaster made&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;' get versions from master range&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dictUniqueMasterSerials&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictUniqueMasterSerials&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictUniqueMasterSerials&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UniqueVersionsInArtworkDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dictMaster&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;code_serial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dictUnique Serials made&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;' Stock Code range to stock code Object dict&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;trimming values in stock codes&quot;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;Utils&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TrimRange&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Refs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rgStockCodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictStockCodeFields&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dictStockCodes&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictStockCodes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictStockCodes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictObjects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;clsVersion&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Refs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rgStockCodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictStockCodeFields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dictStockCodes made&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;' see which serials from master are not in stock code list&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dictNewSerials&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictNewSerials&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictNewSerials&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictDiff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dictUniqueMasterSerials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictStockCodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dictNew Serials made&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;' output results of pieces that need to be added&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;PrintDictOfObjectsToSheet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictNewSerials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictStockCodeFields&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Refs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wsOutput&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;Debug&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Operation Success!&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;n&quot;&gt;MsgBox&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;All done.&quot;&lt;/span&gt;
+
+
+	&lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Sub&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The following are the main subs and functions referred to in the above code block. Other subs and functions are basic helper functions to help break up the code, like &lt;code class=&quot;highlighter-rouge&quot;&gt;print dict to sheet&lt;/code&gt; etc.&lt;/p&gt;
+
+&lt;div class=&quot;language-visualbasic highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;Function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;UniqueVersionsInArtworkDict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dict&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+&lt;span class=&quot;c1&quot;&gt;' Keep only unique version ID in Artwork Object Dictionary&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;' This will then be used to check against the Version Object Dictionary&lt;/span&gt;
+	
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dictUniques&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictUniques&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;oVersion&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clsVersion&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;For&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Each&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Keys&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CallByName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VbGet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictUniques&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;False&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Then&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oVersion&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clsVersion&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dictUniques&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oVersion&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;With&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictUniques&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;material&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;material&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;With&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Next&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UniqueVersionsInArtworkDict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictUniques&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Function&lt;/span&gt;
+
+
+
+&lt;span class=&quot;k&quot;&gt;Function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dictDiff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dict1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dict2&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;' Output any keys that are in dict1 but not in dict2.&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;k2&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;dictOutput&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictOutput&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;New&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;For&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Each&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dict1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Keys&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dict2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;False&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Then&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dictOutput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dict1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Next&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;Set&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictDiff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictOutput&lt;/span&gt;
+    
+&lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Function&lt;/span&gt;
+
+
+
+&lt;span class=&quot;k&quot;&gt;Sub&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MergeDictsOfObjects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dictOrigin&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictDestination&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;
+                    &lt;span class=&quot;n&quot;&gt;dictFieldsToUpdate&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Scripting&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dictionary&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;collChanges&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Collection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;'  Take two dictionaries of Objects&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;'  one Origin, one Destination&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;'  Update Destination Dict object properties&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;'  with the fields specified in dictFieldsToUpdate,&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;'  Output a list of the keys that were updated in collChanges&lt;/span&gt;
+
+
+
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;kOrigin&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;' Origin keys&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;kDestination&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;' Destination keys&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;kField&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;' Field keys&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Dim&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;As&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Variant&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;' Temporary holder of values&lt;/span&gt;
+
+
+    &lt;span class=&quot;k&quot;&gt;For&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Each&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kOrigin&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictOrigin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Keys&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictDestination&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exists&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kOrigin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Then&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;For&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Each&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kField&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;In&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictFieldsToUpdate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Keys&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CallByName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dictOrigin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kOrigin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VbGet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;CallByName&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dictDestination&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kOrigin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kField&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;VbLet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;val&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;Next&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;dictDestination&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kOrigin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;change&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;True&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;collChanges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Add&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kOrigin&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;If&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;Next&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;End&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;Sub&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+ </entry>
+ 
+</feed>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Your Title - game-dev</title>
+ <link href="http://localhost:4000//tag/game-dev.xml" rel="self"/>
+ <link href="http://localhost:4000/tag/game-dev.html"/>
+ <updated>2021-05-05T13:03:28+02:00</updated>
+ <id>http://example.com/tag/game-dev.html</id>
+ <author>
+   <name>Author Here</name>
+ </author>
+ 
+ <entry>
+   <title>Simple Baduk (Go game)</title>
+   <link href="http://example.com/2020/06/27/baduk.html"/>
+   <updated>2020-06-27T00:00:00+02:00</updated>
+   <id>http://example.com/2020/06/27/baduk</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Pod Racer</title>
+   <link href="http://example.com/2020/06/20/racer.html"/>
+   <updated>2020-06-20T00:00:00+02:00</updated>
+   <id>http://example.com/2020/06/20/racer</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Lander</title>
+   <link href="http://example.com/2020/06/01/lander.html"/>
+   <updated>2020-06-01T00:00:00+02:00</updated>
+   <id>http://example.com/2020/06/01/lander</id>
+   <content type="html">
+</content>
+ </entry>
+ 
+</feed>

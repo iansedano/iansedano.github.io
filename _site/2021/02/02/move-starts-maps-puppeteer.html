@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="iansedano" />
+
+    
+	
+</head>
+<style>@import url(/public/css/syntax/monokai.css);</style>
+  <title>iansedano</title>
+  <!-- <link href="/public/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <link href="/public/css/style.css" rel="stylesheet">
+  <body>
+  	<div class="container"> 
+		<div class="sidebar">
+			<div class="sidebar-item sidebar-header">
+	<div class='sidebar-brand'>
+		<a href="/about/">iansedano</a>
+	</div>
+	<p class="lead">Personal Blog</p></div>
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+		<li class="nav-title">Pages</li>
+		<li>
+			<a class="nav-item" href="/">Posts</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		<li>
+			<a class="nav-item" href="/about/">
+				About
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<li>
+			<a class="nav-item" href="/pages/tags.html">
+				All Tags
+			</a>
+		</li>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</ul>
+</div>
+
+<!-- <div class="sidebar-item sidebar-nav">
+  	<ul class="nav">
+			<li class="nav-title">Categories</li>
+	    
+	    <li>
+	    	<a class="nav-item" href="/category/#personal projects">
+				<span class="name">personal projects</span>
+				<span class="badge">1</span>
+	    	</a>
+ 		</li>
+	    
+	  </nav>
+	</ul>
+</div> -->
+
+<div class="sidebar-item sidebar-nav">
+	<ul class="nav">
+		<li class="nav-title">Top Tags</li>
+
+		
+		
+		
+		
+		<li><a href="/tag/programming">programming (17)</a></li>
+		
+		
+		<li><a href="/tag/music">music (8)</a></li>
+		
+		
+		<li><a href="/tag/art">art (7)</a></li>
+		
+		
+		<li><a href="/tag/javascript">javascript (6)</a></li>
+		
+		
+		<li><a href="/tag/design">design (6)</a></li>
+		
+		
+		<li><a href="/tag/hardware">hardware (5)</a></li>
+		
+		
+		<li><a href="/tag/video">video (4)</a></li>
+		
+		
+		<li><a href="/tag/p5">p5 (4)</a></li>
+		
+	</ul>
+</div>
+
+
+<div class="sidebar-item sidebar-footer">
+	<p>Powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a></p>
+</div>
+		</div>
+		<div class="content">
+			<article class="post">
+	<header class="post-header">
+		<div class="post-title"> 
+			Keep your stars
+		</div>
+		<time class="post-date dt-published" datetime="2021-02-02T00:00:00+01:00" itemprop="datePublished">2021/02/02
+		</time>		
+	</header>
+
+	<div class="post-content">
+		<p>If you are reading this, then you probably know that Google Maps has a great feature that allows you to pin locations using “stars”.</p>
+
+<p>Google provides a way to export your “stars” as a JSON file, but there is no corresponding import function. Read the “Google Takeout” section, for instructions on how to simply export them.</p>
+
+<p>If you have several hundred “stars”, read on, because importing them manually would probably take at least a whole day, and some stars would inevitably fall through the cracks.</p>
+
+<h3 id="google-takeout">Google Takeout</h3>
+
+<p>Go to Google takeout and select “maps” and export them, you should end up with a JSON file with your stars. In my case it was called “Saved Places.json” and its form was like this:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"FeatureCollection"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"features"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">...</span><span class="w"> </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Within the “features” array were all my stars in this format:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="nl">"geometry"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="nl">"coordinates"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">2.1850920</span><span class="p">,</span><span class="w"> </span><span class="mf">41.3917170</span><span class="w"> </span><span class="p">],</span><span class="w">
+		</span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Point"</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+	</span><span class="nl">"properties"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="nl">"Google Maps URL"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"http://maps.google.com/?cid=15138001108724662971"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"Location"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+			</span><span class="nl">"Address"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Carrer de Buenaventura Muñoz, 24, 08018 Barcelona, Spain"</span><span class="p">,</span><span class="w">
+			</span><span class="nl">"Business Name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Clínica Veterinària Ciutadella"</span><span class="p">,</span><span class="w">
+			</span><span class="nl">"Geo Coordinates"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+				</span><span class="nl">"Latitude"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"41.3917170"</span><span class="p">,</span><span class="w">
+				</span><span class="nl">"Longitude"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2.1850920"</span><span class="w">
+			</span><span class="p">}</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+		</span><span class="nl">"Published"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-21T09:26:01Z"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"Title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Clinica Veterinaria Ciutadella"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"Updated"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-21T09:26:01Z"</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+	</span><span class="nl">"type"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>This particular entry describes the location of a vet in Barcelona.</p>
+
+<p>Once you have this JSON file, you can move onto the Puppeteer section of this process in the safe knowledge that your stars are backed up, and if all else fails, you can go through them manually.</p>
+
+<h3 id="automated-import-overview">Automated Import Overview</h3>
+
+<ol>
+  <li>Install required software.</li>
+  <li>Set up browser log in.</li>
+  <li>Test the script (because Google is prone to change its HTML and CSS structure).</li>
+  <li>Run script.</li>
+</ol>
+
+<p>Credits:</p>
+<ul>
+  <li><a href="https://medium.com/@jaredpotter1/connecting-puppeteer-to-existing-chrome-window-8a10828149e0">Jared Potter</a> - for how to work around logging in with the automated session.</li>
+  <li><a href="https://gist.github.com/benjibee/37e0031a8aa7a25e9814a01bdb03217c">Benji Bee</a> - for the puppeteer script that this article’s one was adapted from.</li>
+</ul>
+
+<h3 id="install-required-software">Install Required Software</h3>
+
+<p>Many of these steps are system specific, what follows are instructions for Windows 10 with powershell.</p>
+
+<p>Install <a href="[https://nodejs.org/en/](https://nodejs.org/en/)">node</a> and npm (should be installed automatically with node), if you haven’t got them.</p>
+
+<p>Go into or create the folder where this project is going to run from. It can be any folder, you will be making a new one there:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>moveStars
+<span class="nb">cd </span>moveStars
+npm init <span class="nt">--y</span>
+npm <span class="nb">install </span>puppeteer
+npm <span class="nb">install </span>fs
+</code></pre></div></div>
+
+<p>Make sure its working by testing out some examples from the <a href="https://developers.google.com/web/tools/puppeteer/get-started">quickstart</a>.</p>
+
+<h3 id="setting-up-your-login">Setting up your Login</h3>
+
+<p>It is possible to manage logins with Puppeteer but its much simpler to just set up a debugging session and log in manually then have the puppeteer script connect itself to the logged-in browser. Especially since this script is designed to be run just once.</p>
+
+<p>Within your project folder, in a path something like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\dev\moveStars\node_modules\puppeteer\.local-chromium\win64-818858\chrome-win\
+</code></pre></div></div>
+
+<p>You should find <code class="highlighter-rouge">chrome.exe</code>.</p>
+
+<p>Once you have your path to that file, run the following command to open a remote debugging session:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:<span class="se">\d</span>ev<span class="se">\m</span>oveStars<span class="se">\n</span>ode_modules<span class="se">\p</span>uppeteer<span class="se">\.</span>local-chromium<span class="se">\w</span>in64-818858<span class="se">\c</span>hrome-win<span class="se">\c</span>hrome.exe <span class="nt">--remote-debugging-port</span><span class="o">=</span>9222
+</code></pre></div></div>
+
+<p>Be sure to do it with the <em>full path</em> in one command, if you just call <code class="highlighter-rouge">chrome.exe</code> without specifying this particular executable (puppeteer’s copy) then it might end up using the system default.</p>
+
+<p>This will open up a browser session. In the newly opened window go to URL <code class="highlighter-rouge">http://127.0.0.1:9222/json/version</code>.</p>
+
+<p>You should see some information. Copy the <code class="highlighter-rouge">websocketDebuggerUrl</code> value - this is the unique session value, which should look something like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ws://127.0.0.1:9222/devtools/browser/ca080c01-8152-4bf2-84e0-927cf7af9956
+</code></pre></div></div>
+
+<p>Now you can connect your script to this very same browser session:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">wsChromeEndpointurl</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">ws://127.0.0.1:9222/devtools/browser/ca080c01-8152-4bf2-84e0-927cf7af9956</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">browser</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">puppeteer</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span>
+    <span class="na">browserWSEndpoint</span><span class="p">:</span> <span class="nx">wsChromeEndpointurl</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>Now, instead of managing logins and possible captchas in the script, you can just log in normally to the Google account you want to import your stars to, and then run the script. The script will connect itself to the same browser session and will not need to login.</p>
+
+<h3 id="the-script">The script</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Based on:
+ * https://gist.github.com/benjibee/37e0031a8aa7a25e9814a01bdb03217c
+ * This script imports Google Stars from a geoJSON file to the logged in account.
+ */</span>
+
+<span class="kd">const</span> <span class="nx">puppeteer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">puppeteer</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">jsonFile</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="dl">'</span><span class="se">\\</span><span class="s1">Saved Places.json</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">jsonFile</span><span class="p">);</span>
+
+<span class="kd">const</span> <span class="nx">wsChromeEndpointurl</span> <span class="o">=</span>
+	<span class="dl">'</span><span class="s1">ws://127.0.0.1:9222/devtools/browser/ca080c01-8152-4bf2-84e0-927cf7af9956</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">scrape</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+    <span class="kd">const</span> <span class="nx">browser</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">puppeteer</span><span class="p">.</span><span class="nx">connect</span><span class="p">({</span>
+        <span class="na">browserWSEndpoint</span><span class="p">:</span> <span class="nx">wsChromeEndpointurl</span><span class="p">,</span>
+    <span class="p">});</span>
+
+    <span class="kd">const</span> <span class="nx">page</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">browser</span><span class="p">.</span><span class="nx">newPage</span><span class="p">();</span>
+    <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">goto</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://maps.google.com/</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span><span class="na">waitUntil</span><span class="p">:</span> <span class="dl">'</span><span class="s1">networkidle2</span><span class="dl">'</span><span class="p">});</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">index</span> <span class="k">in</span> <span class="nx">jsonData</span><span class="p">.</span><span class="nx">features</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="kd">let</span> <span class="nx">place</span> <span class="o">=</span> <span class="nx">jsonData</span>
+                    <span class="p">.</span><span class="nx">features</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+                    <span class="p">.</span><span class="nx">properties</span><span class="p">[</span><span class="dl">"</span><span class="s2">Google Maps URL</span><span class="dl">"</span><span class="p">];</span>
+        <span class="kd">let</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">jsonData</span>
+                    <span class="p">.</span><span class="nx">features</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>
+                    <span class="p">.</span><span class="nx">properties</span><span class="p">[</span><span class="dl">"</span><span class="s2">Location</span><span class="dl">"</span><span class="p">][</span><span class="dl">"</span><span class="s2">Business Name</span><span class="dl">"</span><span class="p">];</span>
+
+        <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">goto</span><span class="p">(</span><span class="nx">place</span><span class="p">,</span> <span class="p">{</span><span class="na">waitUntil</span><span class="p">:</span> <span class="dl">'</span><span class="s1">networkidle2</span><span class="dl">'</span><span class="p">});</span>
+        <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span>
+                	<span class="dl">"</span><span class="s2">[src='//maps.gstatic.com/consumer/companion/starred_list_1x.png']</span><span class="dl">"</span>
+                	<span class="p">)</span>
+                <span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">[aria-label^='Save']</span><span class="dl">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
+                <span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+                    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">[data-index='2']</span><span class="dl">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
+                <span class="p">},</span> <span class="mi">50</span><span class="p">);</span>
+
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Added "</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">" to your starred places!</span><span class="dl">'</span><span class="p">);</span>
+
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+                    <span class="dl">'</span><span class="s1">Skipping "</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">" as it was already starred…</span><span class="dl">'</span>
+                    <span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">});</span>
+
+        <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">waitFor</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="c1">// uncomment if you want the browser to close after its done</span>
+    <span class="c1">// browser.close(); </span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="nx">scrape</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">All done!</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">));</span>
+</code></pre></div></div>
+
+<p>Its a good idea to test the script with a few stars before leaving it to its devices. In particular, you may need to fiddle and dig around with the CSS selectors in this section:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span>
+			<span class="dl">"</span><span class="s2">[src='//maps.gstatic.com/consumer/companion/starred_list_1x.png']</span><span class="dl">"</span>
+			<span class="p">)</span>
+		<span class="p">.</span><span class="nx">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">[aria-label^='Save']</span><span class="dl">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
+		<span class="nb">window</span><span class="p">.</span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+			<span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">[data-index='2']</span><span class="dl">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
+		<span class="p">},</span> <span class="mi">50</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Which is the code that identifies the sequence of buttons that you need to press to “star” a location.</p>
+
+	</div>
+</article>
+		</div>
+	</div>
+  </body>
+</html>
